@@ -8,9 +8,10 @@ export default ({mode}) => {
     return defineConfig({
         plugins: [react()],
         server: {
+            port: 3000,
             proxy: {
                 "^/api": {
-                    target: dotenv.VITE_BACKEND_ADDRESS
+                    target: dotenv["VITE_BACKEND_ADDRESS"]
                 }
             }
         }

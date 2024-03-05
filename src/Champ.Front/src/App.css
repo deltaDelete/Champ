@@ -1,3 +1,15 @@
 #root {
-  margin: 0 auto;
+  @apply mx-auto my-0 flex flex-col;
+}
+
+header {
+  @apply w-full bg-amber-500 h-16 flex items-center p-4 sticky;
+}
+
+main {
+  @apply min-h-[720px] max-w-[1280px] pb-16 self-center;
+}
+
+footer {
+  @apply w-full bg-amber-950 h-16 flex items-center p-4 absolute bottom-0;
 }

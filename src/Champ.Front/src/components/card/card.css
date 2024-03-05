@@ -1,0 +1,7 @@
+.card {
+    @apply flex flex-col gap-2 bg-white opacity-50 p-4 text-black;
+}
+
+.card .header {
+    @apply text-xl;
+}
