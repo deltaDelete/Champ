@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 namespace Champ.API;
 
 public class ApplicationContext : DbContext {
+    private readonly ILogger<DbContext> _logger;
 
     public string ConnectionString = string.Empty;
 
@@ -13,12 +14,16 @@ public class ApplicationContext : DbContext {
     public DbSet<Hospitalization> Hospitalizations { get; set; } = null!;
     public DbSet<MedicalRecord> MedicalRecords { get; set; } = null!;
     public DbSet<Patient> Patients { get; set; } = null!;
+    public DbSet<Procedure> Procedures { get; set; } = null!;
     public DbSet<Policy> Policies { get; set; } = null!;
     public DbSet<ProcedureType> ProcedureTypes { get; set; } = null!;
     public DbSet<Visit> Visits { get; set; } = null!;
 
-    public ApplicationContext(IConfiguration configuration) {
+    public ApplicationContext(IConfiguration configuration, ILogger<DbContext> logger) {
+        _logger = logger;
         ConnectionString = configuration.GetSection("Database").GetValue<string>("ConnectionString") ?? throw new Exception("Database.ConnectionString is empty or non existent");
+        Database.EnsureCreated();
+        Database.Migrate();
     }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder) {
@@ -28,5 +33,6 @@ public class ApplicationContext : DbContext {
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) {
         base.OnConfiguring(optionsBuilder);
         optionsBuilder.UseMySql(ConnectionString, ServerVersion.AutoDetect(ConnectionString));
+        optionsBuilder.LogTo(s => _logger.LogDebug("{}", s));
     }
 }

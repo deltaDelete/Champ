@@ -17,11 +17,11 @@ public class Hospitalization {
 
     [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
     [DefaultValue("CURRENT_DATE")]
-    public DateOnly AdmissionDate { get; set; }
+    public DateTimeOffset AdmissionDate { get; set; }
 
     [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
     [DefaultValue("CURRENT_DATE")]
-    public DateOnly DischargeDate { get; set; }
+    public DateTimeOffset DischargeDate { get; set; }
 
     [MaxLength(255)]
     public string Reason { get; set; } = string.Empty;

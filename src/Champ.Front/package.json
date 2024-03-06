@@ -11,8 +11,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "linqts": "^1.15.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-hook-form": "^7.51.0",
     "react-router-dom": "^6.22.1"
   },
   "devDependencies": {

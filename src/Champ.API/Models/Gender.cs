@@ -8,5 +8,6 @@ public class Gender {
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int GenderId { get; set; } = 0;
 
+    [MaxLength(255)]
     public string Name { get; set; } = string.Empty;
 }

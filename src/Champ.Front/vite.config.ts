@@ -5,6 +5,7 @@ import react from '@vitejs/plugin-react'
 // @ts-ignore
 export default ({mode}) => {
     const dotenv = loadEnv(mode, process.cwd());
+    console.log(dotenv);
     return defineConfig({
         plugins: [react()],
         server: {

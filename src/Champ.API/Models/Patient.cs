@@ -9,6 +9,7 @@ public class Patient {
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int PatientId { get; set; } = 0;
 
+    [Column(TypeName = "mediumblob")]
     public byte[] Photo { get; set; } = Array.Empty<byte>();
 
     [MaxLength(255)]
@@ -23,8 +24,9 @@ public class Patient {
     public long PassportNumber { get; set; } = 0;
 
     [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
-    [DefaultValue("CURRENT_DATE")]
-    public DateOnly DateOfBirth { get; set; }
+    [DefaultValue("CURRENT_TIMESTAMP")]
+    [Column(TypeName = "timestamp")]
+    public DateTimeOffset DateOfBirth { get; set; }
 
     [ForeignKey(nameof(Gender))]
     public int GenderId { get; set; }
@@ -35,8 +37,10 @@ public class Patient {
     public string Address { get; set; } = string.Empty;
 
     [Phone]
+    [MaxLength(20)]
     public string PhoneNumber { get; set; } = string.Empty;
 
     [EmailAddress]
+    [MaxLength(255)]
     public string Email { get; set; } = string.Empty;
 }

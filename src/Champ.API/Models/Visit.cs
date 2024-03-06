@@ -13,5 +13,5 @@ public class Visit {
 
     [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
     [DefaultValue("CURRENT_DATE")]
-    public DateOnly Date { get; set; }
+    public DateTimeOffset Date { get; set; }
 }

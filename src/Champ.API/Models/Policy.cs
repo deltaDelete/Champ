@@ -16,7 +16,7 @@ public class Policy {
 
     [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
     [DefaultValue("CURRENT_DATE")]
-    public DateOnly ExpirationDate { get; set; }
+    public DateTimeOffset ExpirationDate { get; set; }
 
     [ForeignKey(nameof(Patient))]
     public int PatientId { get; set; }
