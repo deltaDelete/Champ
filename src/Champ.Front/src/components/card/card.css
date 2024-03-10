@@ -1,5 +1,5 @@
 .card {
-    @apply flex flex-col gap-2 bg-white rounded-xl overflow-clip;
+    @apply flex flex-col gap-2 bg-white rounded-xl overflow-clip border border-slate-200 sm:w-full;
 }
 
 .card .header {

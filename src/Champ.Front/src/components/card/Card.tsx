@@ -1,8 +1,8 @@
 import "./card.css";
-import React, {ReactElement} from "react";
+import { DetailedHTMLProps, HTMLAttributes, ReactElement } from "react";
 import {List} from "linqts";
 
-type CardProps = {
+type CardProps =  DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> & {
     children: ReactElement<ICardContent> | ReactElement<ICardContent>[]
 }
 
@@ -16,7 +16,7 @@ type CardBody = ICardContent & {
     children: ReactElement | ReactElement[]
 }
 
-export function Card({children}: CardProps) {
+export function Card({children, className}: CardProps) {
     const header = () => {
         if (Array.isArray(children)) {
             const childrenList = new List<ReactElement<ICardContent>>();
@@ -34,7 +34,7 @@ export function Card({children}: CardProps) {
         return undefined;
     }
     return (
-        <div className="card">
+        <div className={`card ${className}`}>
             {header()}
             {body()}
         </div>
