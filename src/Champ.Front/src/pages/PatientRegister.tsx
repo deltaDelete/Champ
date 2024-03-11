@@ -1,8 +1,14 @@
 import { Card, CardBody, CardHeader } from "../components/card/Card.tsx";
-import { RegisterOptions, SubmitErrorHandler, SubmitHandler, useForm } from "react-hook-form";
+import {
+    Control, FieldPath,
+    FieldValues,
+    SubmitErrorHandler,
+    SubmitHandler,
+    useForm,
+} from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Gender, Patient, PatientSchema } from "../models/Patient.ts";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Client } from "../api/client.ts";
 import { Button } from "@shadcn/components/ui/button.tsx";
 import {
@@ -15,90 +21,82 @@ import {
 import {
     Form,
     FormControl,
-    FormDescription,
     FormField,
     FormItem,
     FormLabel,
     FormMessage,
 } from "@shadcn/components/ui/form.tsx";
 import { Input } from "@shadcn/components/ui/input.tsx";
+import { toast } from "../../@shadcn/components/ui/use-toast.ts";
+import { useMaskito } from "@maskito/react";
 
 const client = new Client();
-const genderRepo = client.getGenders();
 const patientRepo = client.getPatients();
 
 export default function PatientRegister() {
     const form = useForm<Patient>({
         resolver: zodResolver(PatientSchema),
     });
-    const [genders, setGenders] = useState<Array<Gender>>([]);
-    useEffect(() => {
-        async function get() {
-            const items = await genderRepo.getAll();
-            setGenders(items);
-        }
-
-        get().catch(e => console.log(e));
-    }, []);
+    const [genders, _] = useState<Array<Gender>>([
+        {
+            genderId: 1,
+            name: "Мужской",
+        },
+        {
+            genderId: 2,
+            name: "Женский",
+        },
+    ]);
 
     const onSubmit: SubmitHandler<Patient> = async data => {
-        // await patientRepo.post(data);
-        console.log(data);
+        // await patientRepo.post(data).then(
+        //     _ =>
+        toast({
+            title: "Добавлен пациент",
+            description: <p className="break-all">{JSON.stringify(data)}</p>,
+        });
+        // );
+        console.log(JSON.stringify(data));
     };
 
     const onInvalid: SubmitErrorHandler<Patient> = async (errors, event) => {
         console.log(errors, event);
+        toast({
+            title: "Ошибка",
+            description: <div className="flex flex-col">
+                {
+                    Object.entries(errors).map(([_, value], __, ___) =>
+                        value?.message && <p className="break-all">{value.message}</p>)
+                }
+            </div>,
+        });
     };
+    
+    // TODO: Разбраться с масками
+    const maskito = useMaskito({
+        options: {
+            mask: /^(\d{4}\s\d{6})$/
+        }
+    })
 
     return (
         <>
-            <Card className={"m-4"}>
-                <CardHeader header="Данные" />
+            <Card>
+                <CardHeader header="Регистрация" />
                 <CardBody>
                     <Form {...form}>
                         <form className="flex flex-col gap-1" onSubmit={form.handleSubmit(onSubmit, onInvalid)}>
-                            <FormField render={
-                                ({ field }) => (
-                                    <FormItem>
-                                        <FormLabel>Фамилия</FormLabel>
-                                        <FormControl>
-                                            <Input placeholder="Иванов" {...field} />
-                                        </FormControl>
-                                        <FormMessage />
-                                    </FormItem>
-                                )} control={form.control} name="lastName" />
-                            <FormField render={
-                                ({ field }) => (
-                                    <FormItem>
-                                        <FormLabel>Имя</FormLabel>
-                                        <FormControl>
-                                            <Input placeholder="Иван" {...field} />
-                                        </FormControl>
-                                        <FormMessage />
-                                    </FormItem>
-                                )} control={form.control} name="firstName" />
-                            <FormField render={
-                                ({ field }) => (
-                                    <FormItem>
-                                        <FormLabel>Отчество</FormLabel>
-                                        <FormControl>
-                                            <Input placeholder="Иванович" {...field} />
-                                        </FormControl>
-                                        <FormMessage />
-                                    </FormItem>
-                                )} control={form.control} name="middleName" />
-                            <FormField render={
-                                ({ field }) => (
-                                    <FormItem>
-                                        <FormLabel>Паспорт</FormLabel>
-                                        <FormControl>
-                                            <Input placeholder="9999 999999" type={"number"} {...field}
-                                                   max={9_999_999_999} />
-                                        </FormControl>
-                                        <FormMessage />
-                                    </FormItem>
-                                )} control={form.control} name="passportNumber" />
-                            <FormField render={
+                            <TextInput control={form.control} name={"lastName"} placeholder={"Иванов"}
+                                       label={"Фамилия"} />
+                            <TextInput control={form.control} name={"firstName"} placeholder={"Иван"} label={"Имя"} />
+                            <TextInput control={form.control} name={"middleName"} placeholder={"Иванович"}
+                                       label={"Отчество"} />
+                            <NumberInput control={form.control} name={"passportNumber"} placeholder={"1234 123456"}
+                                         ref={maskito}
+                                         label={"Серия и номер паспорта"} />
+                            <FormField
+                                control={form.control} name="dateOfBirth"
+                                render={
                                 ({ field }) => (
                                     <FormItem>
                                         <FormLabel>Дата рождения</FormLabel>
@@ -107,7 +105,7 @@ export default function PatientRegister() {
                                         </FormControl>
                                         <FormMessage />
                                     </FormItem>
-                                )} control={form.control} name="dateOfBirth" />
+                                )} />
                             <FormField render={
                                 ({ field }) => (
                                     <FormItem>
@@ -128,44 +126,102 @@ export default function PatientRegister() {
                                         <FormMessage />
                                     </FormItem>
                                 )} control={form.control} name="phoneNumber" />
-                            <FormField render={
-                                ({ field }) => (
-                                    <FormItem>
-                                        <FormLabel>Электронная почта</FormLabel>
-                                        <FormControl>
-                                            <Input placeholder="i.ivanov@example.ru" {...field} />
-                                        </FormControl>
-                                        <FormMessage />
-                                    </FormItem>
-                                )} control={form.control} name="email" />
-                            <FormField name="genderId" control={form.control}
-                                       render={
-                                           ({ field }) => (
-                                               <FormItem>
-                                                   <FormLabel>Пол</FormLabel>
-                                                   <Select onValueChange={field.onChange} defaultValue={field.value}>
-                                                       <FormControl>
-                                                           {/* @ts-ignore */}
-                                                           <SelectTrigger>
-                                                               <SelectValue placeholder="Выберите пол" />
-                                                           </SelectTrigger>
-                                                       </FormControl>
-                                                       <SelectContent>
-                                                           {genders.map(value => (
-                                                               <SelectItem key={value.genderId}
-                                                                           value={value.genderId.toString()}>{value.name}</SelectItem>
-                                                           ))}
-                                                       </SelectContent>
-                                                   </Select>
-                                                   <FormMessage />
-                                               </FormItem>
-                                           )
-                                       } />
-                            <Button type={"submit"}>Зарегистрироваться</Button>
+                            <TextInput control={form.control} name={"email"} placeholder={"i.ivanov@mail.ru"}
+                                       label={"Электронная почта"} />
+                            {/* @ts-ignore */}
+                            <Selector collection={genders} keySelector={v => v.name.toString()}
+                                      valueSelector={v => v.genderId.toString()} displayNameSelector={v => v.name}
+                                      control={form.control} name={"genderId"} placeholder={"Выберите ваш пол"}
+                                      label={"Пол"} />
+                            <Button type={"submit"} className="mt-2">Зарегистрироваться</Button>
                         </form>
                     </Form>
                 </CardBody>
             </Card>
         </>
+    )
+        ;
+}
+
+interface IFormControl<TFieldValues extends FieldValues = FieldValues> {
+    control: Control<TFieldValues>,
+    name: FieldPath<TFieldValues>,
+    placeholder: string | undefined,
+    label: string | undefined,
+    ref?: React.RefCallback<any>
+}
+
+interface TextInputProps<TFieldValues extends FieldValues = FieldValues> extends IFormControl<TFieldValues> {
+}
+
+interface NumberInputProps<TFieldValues extends FieldValues = FieldValues> extends IFormControl<TFieldValues> {
+    min?: number | string,
+    max?: number | string
+}
+
+interface SelectProps<T, TFieldValues extends FieldValues = FieldValues> extends IFormControl<TFieldValues> {
+    collection: T[],
+    keySelector: <T>(data: T) => string,
+    valueSelector: <T>(data: T) => string,
+    displayNameSelector: <T>(data: T) => string,
+}
+
+function TextInput<TFieldValues extends FieldValues = FieldValues>(props: TextInputProps<TFieldValues>) {
+    return (
+        <FormField render={
+            ({ field }) => (
+                <FormItem ref={props.ref}>
+                    {props.label && <FormLabel>{props.label}</FormLabel>}
+                    <FormControl>
+                        <Input placeholder={props.placeholder} {...field} />
+                    </FormControl>
+                    <FormMessage />
+                </FormItem>
+            )} control={props.control} name={props.name} />
+    );
+}
+
+function NumberInput<TFieldValues extends FieldValues = FieldValues>(props: NumberInputProps<TFieldValues>) {
+    return (
+
+        <FormField render={
+            ({ field }) => (
+                <FormItem>
+                    {props.label && <FormLabel>{props.label}</FormLabel>}
+                    <FormControl>
+                        <Input placeholder={props.placeholder} type="number" {...field}
+                               max={props.max} min={props.min} />
+                    </FormControl>
+                    <FormMessage />
+                </FormItem>
+            )} control={props.control} name={props.name} />
+    );
+}
+
+function Selector<T, TFieldValues extends FieldValues = FieldValues>(props: SelectProps<T, TFieldValues>) {
+    return (
+        <FormField name={props.name} control={props.control}
+                   render={
+                       ({ field }) => (
+                           <FormItem>
+                               {props.label && <FormLabel>{props.label}</FormLabel>}
+                               <Select onValueChange={field.onChange} defaultValue={field.value}>
+                                   <FormControl>
+                                       {/* @ts-ignore */}
+                                       <SelectTrigger>
+                                           <SelectValue placeholder={props.placeholder} />
+                                       </SelectTrigger>
+                                   </FormControl>
+                                   <SelectContent>
+                                       {props.collection.map(value => (
+                                           <SelectItem key={props.keySelector(value)}
+                                                       value={props.valueSelector(value)}>{props.displayNameSelector(value)}</SelectItem>
+                                       ))}
+                                   </SelectContent>
+                               </Select>
+                               <FormMessage />
+                           </FormItem>
+                       )
+                   } />
     );
 }

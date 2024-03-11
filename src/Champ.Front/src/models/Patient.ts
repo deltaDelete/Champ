@@ -1,4 +1,6 @@
 import * as z from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { tuple, ZodString } from "zod";
 
 export type Patient = {
     patientId: number;
@@ -15,18 +17,25 @@ export type Patient = {
     email: string;
 }
 
+function minLength(minLength: number) {
+    return `Минимальная длина ${minLength}`;
+}
+
 export const PatientSchema = z.object({
-    patientId: z.number().int().optional(),
-    firstName: z.string({ required_error: "firstName is required" }).min(2, { message: "firstName is too short" }),
-    lastName: z.string({ required_error: "lastName is required" }),
-    middleName: z.string(),
-    passportNumber: z.number({ required_error: "passportNumber is required", coerce: true }),
-    dateOfBirth: z.date({ required_error: "dateOfBirth is required", coerce: true }),
-    genderId: z.string({ required_error: "genderId is required", coerce: true }),
-    address: z.string({ required_error: "address is required" }),
-    phoneNumber: z.string({ required_error: "phoneNumber is required" }),
-    email: z.string({ required_error: "email is required" }).email({ message: "email is invalid" }),
-});
+        patientId: z.number().int().optional(),
+        firstName: z.string({ required_error: "`Имя` обязательное поле" }).min(1, minLength(1)),
+        lastName: z.string({ required_error: "`Фамилия` обязательное поле" }).min(1, minLength(1)),
+        middleName: z.string().optional(),
+        passportNumber: z.number({ required_error: "`Номер паспорта` обязятальное поле", coerce: true }).min(1, minLength(1)).max(9_999_999_999),
+        dateOfBirth: z.date({ required_error: "`Дата рождения` обязательное поле", coerce: true }),
+        genderId: z.string({ required_error: "`Пол` обязательное поле", coerce: true }),
+        address: z.string({ required_error: "`Адрес` обязательное поле" }),
+        phoneNumber: z.string({ required_error: "`Номер телефона` обязательное поле" }),
+        email: z.string({ required_error: "`Эл. почта` обязательное поле" }).email({ message: "Неверный формат электронной почты" }),
+    },
+    {
+        required_error: "Обязятальное поле",
+    });
 
 export type Gender = {
     genderId: number,

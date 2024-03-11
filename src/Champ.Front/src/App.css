@@ -1,17 +1,17 @@
 #root {
-  @apply mx-auto my-0 h-full flex flex-col;
+  @apply m-auto h-full flex flex-col gap-2;
 }
 
 header {
-  @apply w-full bg-amber-500 h-16 flex items-center p-4 sticky;
+  @apply w-full bg-amber-500 h-16 flex items-center p-4;
 }
 
 main {
-  @apply min-h-[720px] max-w-[1280px] pb-16 self-center grow;
+  @apply min-h-[720px] max-w-[1280px] m-4 self-center grow shrink-0;
 }
 
 footer {
-  @apply w-full bg-amber-950 h-16 flex items-center p-4 bottom-0;
+  @apply w-full h-full max-h-16 grow shrink-0 bg-amber-950 flex items-center p-4;
 }
 
 .field {

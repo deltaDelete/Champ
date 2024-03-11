@@ -1,5 +1,6 @@
 import "./App.css";
 import { Outlet } from "react-router-dom";
+import { Toaster } from "@shadcn/components/ui/toaster.tsx";
 
 function App() {
     return (
@@ -10,6 +11,7 @@ function App() {
             <main>
                 <Outlet />
             </main>
+            <Toaster />
             <footer>
                 <h2>Подвал</h2>
             </footer>

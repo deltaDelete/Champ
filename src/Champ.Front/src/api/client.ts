@@ -2,10 +2,6 @@ import {Gender, Patient} from "../models/Patient.ts";
 
 export class Client {
     constructor() {}
-
-    getGenders(): GenericRepository<Gender> {
-        return new GenericRepository<Gender>("gender");
-    }
     
     getPatients() {
         return new GenericRepository<Patient>("patient")
@@ -14,6 +10,7 @@ export class Client {
 
 class GenericRepository<T> {
     private subroute: string;
+    
     constructor(subroute: string) {
         this.subroute = subroute;
     }
@@ -29,17 +26,23 @@ class GenericRepository<T> {
     }
 
     async post(body: T): Promise<T> {
-        return fetch(`/api/${this.subroute}`, { method: "POST", body: JSON.stringify(body) })
+        const headers = new Headers();
+        headers.append("Content-Type", "application/json");
+        return fetch(`/api/${this.subroute}`, { method: "POST", body: JSON.stringify(body), headers: headers })
             .then(res => res && res.json());
     }
 
     async put(body: T, id: number): Promise<T> {
-        return fetch(`/api/${this.subroute}/${id}`, { method: "PUT", body: JSON.stringify(body) })
+        const headers = new Headers();
+        headers.append("Content-Type", "application/json");
+        return fetch(`/api/${this.subroute}/${id}`, { method: "PUT", body: JSON.stringify(body), headers: headers })
             .then(res => res && res.json());
     }
 
     async delete(id: number) {
-        return fetch(`/api/${this.subroute}/${id}`, { method: "DELETE" })
+        const headers = new Headers();
+        headers.append("Content-Type", "application/json");
+        return fetch(`/api/${this.subroute}/${id}`, { method: "DELETE", headers: headers })
             .then(res => res && res.json());
     }
 }
