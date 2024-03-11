@@ -1,7 +1,391 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataSource name="champ@localhost">
   <database-model serializer="dbm" dbms="MYSQL" family-id="MYSQL" format-version="4.51">
-    <root id="1"/>
+    <root id="1">
+      <DefaultCasing>exact</DefaultCasing>
+      <DefaultEngine>InnoDB</DefaultEngine>
+      <DefaultTmpEngine>InnoDB</DefaultTmpEngine>
+      <Grants>|root||debian-sys-maint|localhost|ALTER|G
+|root||delta|localhost|ALTER|G
+|root||dev||ALTER|G
+|root||root|localhost|ALTER|G
+|root||debian-sys-maint|localhost|ALTER ROUTINE|G
+|root||delta|localhost|ALTER ROUTINE|G
+|root||dev||ALTER ROUTINE|G
+|root||root|localhost|ALTER ROUTINE|G
+|root||debian-sys-maint|localhost|APPLICATION_PASSWORD_ADMIN|G
+|root||delta|localhost|APPLICATION_PASSWORD_ADMIN|G
+|root||dev||APPLICATION_PASSWORD_ADMIN|G
+|root||root|localhost|APPLICATION_PASSWORD_ADMIN|G
+|root||delta|localhost|AUDIT_ABORT_EXEMPT|G
+|root||dev||AUDIT_ABORT_EXEMPT|G
+|root||mysql.infoschema|localhost|AUDIT_ABORT_EXEMPT|G
+|root||mysql.session|localhost|AUDIT_ABORT_EXEMPT|G
+|root||mysql.sys|localhost|AUDIT_ABORT_EXEMPT|G
+|root||root|localhost|AUDIT_ABORT_EXEMPT|G
+|root||debian-sys-maint|localhost|AUDIT_ADMIN|G
+|root||delta|localhost|AUDIT_ADMIN|G
+|root||dev||AUDIT_ADMIN|G
+|root||root|localhost|AUDIT_ADMIN|G
+|root||debian-sys-maint|localhost|AUTHENTICATION_POLICY_ADMIN|G
+|root||delta|localhost|AUTHENTICATION_POLICY_ADMIN|G
+|root||dev||AUTHENTICATION_POLICY_ADMIN|G
+|root||mysql.session|localhost|AUTHENTICATION_POLICY_ADMIN|G
+|root||root|localhost|AUTHENTICATION_POLICY_ADMIN|G
+|root||debian-sys-maint|localhost|BACKUP_ADMIN|G
+|root||delta|localhost|BACKUP_ADMIN|G
+|root||dev||BACKUP_ADMIN|G
+|root||mysql.session|localhost|BACKUP_ADMIN|G
+|root||root|localhost|BACKUP_ADMIN|G
+|root||debian-sys-maint|localhost|BINLOG_ADMIN|G
+|root||delta|localhost|BINLOG_ADMIN|G
+|root||dev||BINLOG_ADMIN|G
+|root||root|localhost|BINLOG_ADMIN|G
+|root||debian-sys-maint|localhost|BINLOG_ENCRYPTION_ADMIN|G
+|root||delta|localhost|BINLOG_ENCRYPTION_ADMIN|G
+|root||dev||BINLOG_ENCRYPTION_ADMIN|G
+|root||root|localhost|BINLOG_ENCRYPTION_ADMIN|G
+|root||debian-sys-maint|localhost|CLONE_ADMIN|G
+|root||delta|localhost|CLONE_ADMIN|G
+|root||dev||CLONE_ADMIN|G
+|root||mysql.session|localhost|CLONE_ADMIN|G
+|root||root|localhost|CLONE_ADMIN|G
+|root||debian-sys-maint|localhost|CONNECTION_ADMIN|G
+|root||delta|localhost|CONNECTION_ADMIN|G
+|root||dev||CONNECTION_ADMIN|G
+|root||mysql.session|localhost|CONNECTION_ADMIN|G
+|root||root|localhost|CONNECTION_ADMIN|G
+|root||debian-sys-maint|localhost|CREATE|G
+|root||delta|localhost|CREATE|G
+|root||dev||CREATE|G
+|root||root|localhost|CREATE|G
+|root||debian-sys-maint|localhost|CREATE ROLE|G
+|root||delta|localhost|CREATE ROLE|G
+|root||dev||CREATE ROLE|G
+|root||root|localhost|CREATE ROLE|G
+|root||debian-sys-maint|localhost|CREATE ROUTINE|G
+|root||delta|localhost|CREATE ROUTINE|G
+|root||dev||CREATE ROUTINE|G
+|root||root|localhost|CREATE ROUTINE|G
+|root||debian-sys-maint|localhost|CREATE TABLESPACE|G
+|root||delta|localhost|CREATE TABLESPACE|G
+|root||dev||CREATE TABLESPACE|G
+|root||root|localhost|CREATE TABLESPACE|G
+|root||debian-sys-maint|localhost|CREATE TEMPORARY TABLES|G
+|root||delta|localhost|CREATE TEMPORARY TABLES|G
+|root||dev||CREATE TEMPORARY TABLES|G
+|root||root|localhost|CREATE TEMPORARY TABLES|G
+|root||debian-sys-maint|localhost|CREATE USER|G
+|root||delta|localhost|CREATE USER|G
+|root||dev||CREATE USER|G
+|root||root|localhost|CREATE USER|G
+|root||debian-sys-maint|localhost|CREATE VIEW|G
+|root||delta|localhost|CREATE VIEW|G
+|root||dev||CREATE VIEW|G
+|root||root|localhost|CREATE VIEW|G
+|root||debian-sys-maint|localhost|DELETE|G
+|root||delta|localhost|DELETE|G
+|root||dev||DELETE|G
+|root||root|localhost|DELETE|G
+|root||debian-sys-maint|localhost|DROP|G
+|root||delta|localhost|DROP|G
+|root||dev||DROP|G
+|root||root|localhost|DROP|G
+|root||debian-sys-maint|localhost|DROP ROLE|G
+|root||delta|localhost|DROP ROLE|G
+|root||dev||DROP ROLE|G
+|root||root|localhost|DROP ROLE|G
+|root||debian-sys-maint|localhost|ENCRYPTION_KEY_ADMIN|G
+|root||delta|localhost|ENCRYPTION_KEY_ADMIN|G
+|root||dev||ENCRYPTION_KEY_ADMIN|G
+|root||root|localhost|ENCRYPTION_KEY_ADMIN|G
+|root||debian-sys-maint|localhost|EVENT|G
+|root||delta|localhost|EVENT|G
+|root||dev||EVENT|G
+|root||root|localhost|EVENT|G
+|root||debian-sys-maint|localhost|EXECUTE|G
+|root||delta|localhost|EXECUTE|G
+|root||dev||EXECUTE|G
+|root||root|localhost|EXECUTE|G
+|root||debian-sys-maint|localhost|FILE|G
+|root||delta|localhost|FILE|G
+|root||dev||FILE|G
+|root||root|localhost|FILE|G
+|root||delta|localhost|FIREWALL_EXEMPT|G
+|root||dev||FIREWALL_EXEMPT|G
+|root||mysql.infoschema|localhost|FIREWALL_EXEMPT|G
+|root||mysql.session|localhost|FIREWALL_EXEMPT|G
+|root||mysql.sys|localhost|FIREWALL_EXEMPT|G
+|root||root|localhost|FIREWALL_EXEMPT|G
+|root||debian-sys-maint|localhost|FLUSH_OPTIMIZER_COSTS|G
+|root||delta|localhost|FLUSH_OPTIMIZER_COSTS|G
+|root||dev||FLUSH_OPTIMIZER_COSTS|G
+|root||root|localhost|FLUSH_OPTIMIZER_COSTS|G
+|root||debian-sys-maint|localhost|FLUSH_STATUS|G
+|root||delta|localhost|FLUSH_STATUS|G
+|root||dev||FLUSH_STATUS|G
+|root||root|localhost|FLUSH_STATUS|G
+|root||debian-sys-maint|localhost|FLUSH_TABLES|G
+|root||delta|localhost|FLUSH_TABLES|G
+|root||dev||FLUSH_TABLES|G
+|root||root|localhost|FLUSH_TABLES|G
+|root||debian-sys-maint|localhost|FLUSH_USER_RESOURCES|G
+|root||delta|localhost|FLUSH_USER_RESOURCES|G
+|root||dev||FLUSH_USER_RESOURCES|G
+|root||root|localhost|FLUSH_USER_RESOURCES|G
+|root||debian-sys-maint|localhost|GROUP_REPLICATION_ADMIN|G
+|root||delta|localhost|GROUP_REPLICATION_ADMIN|G
+|root||dev||GROUP_REPLICATION_ADMIN|G
+|root||root|localhost|GROUP_REPLICATION_ADMIN|G
+|root||debian-sys-maint|localhost|GROUP_REPLICATION_STREAM|G
+|root||delta|localhost|GROUP_REPLICATION_STREAM|G
+|root||dev||GROUP_REPLICATION_STREAM|G
+|root||root|localhost|GROUP_REPLICATION_STREAM|G
+|root||debian-sys-maint|localhost|INDEX|G
+|root||delta|localhost|INDEX|G
+|root||dev||INDEX|G
+|root||root|localhost|INDEX|G
+|root||debian-sys-maint|localhost|INNODB_REDO_LOG_ARCHIVE|G
+|root||delta|localhost|INNODB_REDO_LOG_ARCHIVE|G
+|root||dev||INNODB_REDO_LOG_ARCHIVE|G
+|root||root|localhost|INNODB_REDO_LOG_ARCHIVE|G
+|root||debian-sys-maint|localhost|INNODB_REDO_LOG_ENABLE|G
+|root||delta|localhost|INNODB_REDO_LOG_ENABLE|G
+|root||dev||INNODB_REDO_LOG_ENABLE|G
+|root||root|localhost|INNODB_REDO_LOG_ENABLE|G
+|root||debian-sys-maint|localhost|INSERT|G
+|root||delta|localhost|INSERT|G
+|root||dev||INSERT|G
+|root||root|localhost|INSERT|G
+|root||debian-sys-maint|localhost|LOCK TABLES|G
+|root||delta|localhost|LOCK TABLES|G
+|root||dev||LOCK TABLES|G
+|root||root|localhost|LOCK TABLES|G
+|root||debian-sys-maint|localhost|PASSWORDLESS_USER_ADMIN|G
+|root||delta|localhost|PASSWORDLESS_USER_ADMIN|G
+|root||dev||PASSWORDLESS_USER_ADMIN|G
+|root||root|localhost|PASSWORDLESS_USER_ADMIN|G
+|root||debian-sys-maint|localhost|PERSIST_RO_VARIABLES_ADMIN|G
+|root||delta|localhost|PERSIST_RO_VARIABLES_ADMIN|G
+|root||dev||PERSIST_RO_VARIABLES_ADMIN|G
+|root||mysql.session|localhost|PERSIST_RO_VARIABLES_ADMIN|G
+|root||root|localhost|PERSIST_RO_VARIABLES_ADMIN|G
+|root||debian-sys-maint|localhost|PROCESS|G
+|root||delta|localhost|PROCESS|G
+|root||dev||PROCESS|G
+|root||root|localhost|PROCESS|G
+|root||debian-sys-maint|localhost|REFERENCES|G
+|root||delta|localhost|REFERENCES|G
+|root||dev||REFERENCES|G
+|root||root|localhost|REFERENCES|G
+|root||debian-sys-maint|localhost|RELOAD|G
+|root||delta|localhost|RELOAD|G
+|root||dev||RELOAD|G
+|root||root|localhost|RELOAD|G
+|root||debian-sys-maint|localhost|REPLICATION CLIENT|G
+|root||delta|localhost|REPLICATION CLIENT|G
+|root||dev||REPLICATION CLIENT|G
+|root||root|localhost|REPLICATION CLIENT|G
+|root||debian-sys-maint|localhost|REPLICATION SLAVE|G
+|root||delta|localhost|REPLICATION SLAVE|G
+|root||dev||REPLICATION SLAVE|G
+|root||root|localhost|REPLICATION SLAVE|G
+|root||debian-sys-maint|localhost|REPLICATION_APPLIER|G
+|root||delta|localhost|REPLICATION_APPLIER|G
+|root||dev||REPLICATION_APPLIER|G
+|root||root|localhost|REPLICATION_APPLIER|G
+|root||debian-sys-maint|localhost|REPLICATION_SLAVE_ADMIN|G
+|root||delta|localhost|REPLICATION_SLAVE_ADMIN|G
+|root||dev||REPLICATION_SLAVE_ADMIN|G
+|root||root|localhost|REPLICATION_SLAVE_ADMIN|G
+|root||debian-sys-maint|localhost|RESOURCE_GROUP_ADMIN|G
+|root||delta|localhost|RESOURCE_GROUP_ADMIN|G
+|root||dev||RESOURCE_GROUP_ADMIN|G
+|root||root|localhost|RESOURCE_GROUP_ADMIN|G
+|root||debian-sys-maint|localhost|RESOURCE_GROUP_USER|G
+|root||delta|localhost|RESOURCE_GROUP_USER|G
+|root||dev||RESOURCE_GROUP_USER|G
+|root||root|localhost|RESOURCE_GROUP_USER|G
+|root||debian-sys-maint|localhost|ROLE_ADMIN|G
+|root||delta|localhost|ROLE_ADMIN|G
+|root||dev||ROLE_ADMIN|G
+|root||root|localhost|ROLE_ADMIN|G
+|root||debian-sys-maint|localhost|SELECT|G
+|root||delta|localhost|SELECT|G
+|root||dev||SELECT|G
+|root||mysql.infoschema|localhost|SELECT|G
+|root||root|localhost|SELECT|G
+|root||debian-sys-maint|localhost|SENSITIVE_VARIABLES_OBSERVER|G
+|root||delta|localhost|SENSITIVE_VARIABLES_OBSERVER|G
+|root||dev||SENSITIVE_VARIABLES_OBSERVER|G
+|root||root|localhost|SENSITIVE_VARIABLES_OBSERVER|G
+|root||debian-sys-maint|localhost|SERVICE_CONNECTION_ADMIN|G
+|root||delta|localhost|SERVICE_CONNECTION_ADMIN|G
+|root||dev||SERVICE_CONNECTION_ADMIN|G
+|root||root|localhost|SERVICE_CONNECTION_ADMIN|G
+|root||debian-sys-maint|localhost|SESSION_VARIABLES_ADMIN|G
+|root||delta|localhost|SESSION_VARIABLES_ADMIN|G
+|root||dev||SESSION_VARIABLES_ADMIN|G
+|root||mysql.session|localhost|SESSION_VARIABLES_ADMIN|G
+|root||root|localhost|SESSION_VARIABLES_ADMIN|G
+|root||debian-sys-maint|localhost|SET_USER_ID|G
+|root||delta|localhost|SET_USER_ID|G
+|root||dev||SET_USER_ID|G
+|root||root|localhost|SET_USER_ID|G
+|root||debian-sys-maint|localhost|SHOW DATABASES|G
+|root||delta|localhost|SHOW DATABASES|G
+|root||dev||SHOW DATABASES|G
+|root||root|localhost|SHOW DATABASES|G
+|root||debian-sys-maint|localhost|SHOW VIEW|G
+|root||delta|localhost|SHOW VIEW|G
+|root||dev||SHOW VIEW|G
+|root||root|localhost|SHOW VIEW|G
+|root||debian-sys-maint|localhost|SHOW_ROUTINE|G
+|root||delta|localhost|SHOW_ROUTINE|G
+|root||dev||SHOW_ROUTINE|G
+|root||root|localhost|SHOW_ROUTINE|G
+|root||debian-sys-maint|localhost|SHUTDOWN|G
+|root||delta|localhost|SHUTDOWN|G
+|root||dev||SHUTDOWN|G
+|root||mysql.session|localhost|SHUTDOWN|G
+|root||root|localhost|SHUTDOWN|G
+|root||debian-sys-maint|localhost|SUPER|G
+|root||delta|localhost|SUPER|G
+|root||dev||SUPER|G
+|root||mysql.session|localhost|SUPER|G
+|root||root|localhost|SUPER|G
+|root||debian-sys-maint|localhost|SYSTEM_USER|G
+|root||delta|localhost|SYSTEM_USER|G
+|root||dev||SYSTEM_USER|G
+|root||mysql.infoschema|localhost|SYSTEM_USER|G
+|root||mysql.session|localhost|SYSTEM_USER|G
+|root||mysql.sys|localhost|SYSTEM_USER|G
+|root||root|localhost|SYSTEM_USER|G
+|root||debian-sys-maint|localhost|SYSTEM_VARIABLES_ADMIN|G
+|root||delta|localhost|SYSTEM_VARIABLES_ADMIN|G
+|root||dev||SYSTEM_VARIABLES_ADMIN|G
+|root||mysql.session|localhost|SYSTEM_VARIABLES_ADMIN|G
+|root||root|localhost|SYSTEM_VARIABLES_ADMIN|G
+|root||debian-sys-maint|localhost|TABLE_ENCRYPTION_ADMIN|G
+|root||delta|localhost|TABLE_ENCRYPTION_ADMIN|G
+|root||dev||TABLE_ENCRYPTION_ADMIN|G
+|root||root|localhost|TABLE_ENCRYPTION_ADMIN|G
+|root||debian-sys-maint|localhost|TELEMETRY_LOG_ADMIN|G
+|root||delta|localhost|TELEMETRY_LOG_ADMIN|G
+|root||dev||TELEMETRY_LOG_ADMIN|G
+|root||mysql.session|localhost|TELEMETRY_LOG_ADMIN|G
+|root||root|localhost|TELEMETRY_LOG_ADMIN|G
+|root||debian-sys-maint|localhost|TRIGGER|G
+|root||delta|localhost|TRIGGER|G
+|root||dev||TRIGGER|G
+|root||root|localhost|TRIGGER|G
+|root||debian-sys-maint|localhost|UPDATE|G
+|root||delta|localhost|UPDATE|G
+|root||dev||UPDATE|G
+|root||root|localhost|UPDATE|G
+|root||debian-sys-maint|localhost|XA_RECOVER_ADMIN|G
+|root||delta|localhost|XA_RECOVER_ADMIN|G
+|root||dev||XA_RECOVER_ADMIN|G
+|root||root|localhost|XA_RECOVER_ADMIN|G
+|root||debian-sys-maint|localhost|grant option|G
+|root||delta|localhost|grant option|G
+|root||dev||grant option|G
+|root||root|localhost|grant option|G
+chushpan|schema||dev||ALTER|G
+chushpan|schema||dev||ALTER ROUTINE|G
+chushpan|schema||dev||CREATE|G
+chushpan|schema||dev||CREATE ROUTINE|G
+chushpan|schema||dev||CREATE TEMPORARY TABLES|G
+chushpan|schema||dev||CREATE VIEW|G
+chushpan|schema||dev||DELETE|G
+chushpan|schema||dev||DROP|G
+chushpan|schema||dev||EVENT|G
+chushpan|schema||dev||EXECUTE|G
+chushpan|schema||dev||INDEX|G
+chushpan|schema||dev||INSERT|G
+chushpan|schema||dev||LOCK TABLES|G
+chushpan|schema||dev||REFERENCES|G
+chushpan|schema||dev||SELECT|G
+chushpan|schema||dev||SHOW VIEW|G
+chushpan|schema||dev||TRIGGER|G
+chushpan|schema||dev||UPDATE|G
+goodfellows|schema||dev||ALTER|G
+goodfellows|schema||dev||ALTER ROUTINE|G
+goodfellows|schema||dev||CREATE|G
+goodfellows|schema||dev||CREATE ROUTINE|G
+goodfellows|schema||dev||CREATE TEMPORARY TABLES|G
+goodfellows|schema||dev||CREATE VIEW|G
+goodfellows|schema||dev||DELETE|G
+goodfellows|schema||dev||DROP|G
+goodfellows|schema||dev||EVENT|G
+goodfellows|schema||dev||EXECUTE|G
+goodfellows|schema||dev||INDEX|G
+goodfellows|schema||dev||INSERT|G
+goodfellows|schema||dev||LOCK TABLES|G
+goodfellows|schema||dev||REFERENCES|G
+goodfellows|schema||dev||SELECT|G
+goodfellows|schema||dev||SHOW VIEW|G
+goodfellows|schema||dev||TRIGGER|G
+goodfellows|schema||dev||UPDATE|G
+krp2|schema||dev||ALTER|G
+krp2|schema||dev||ALTER ROUTINE|G
+krp2|schema||dev||CREATE|G
+krp2|schema||dev||CREATE ROUTINE|G
+krp2|schema||dev||CREATE TEMPORARY TABLES|G
+krp2|schema||dev||CREATE VIEW|G
+krp2|schema||dev||DELETE|G
+krp2|schema||dev||DROP|G
+krp2|schema||dev||EVENT|G
+krp2|schema||dev||EXECUTE|G
+krp2|schema||dev||INDEX|G
+krp2|schema||dev||INSERT|G
+krp2|schema||dev||LOCK TABLES|G
+krp2|schema||dev||REFERENCES|G
+krp2|schema||dev||SELECT|G
+krp2|schema||dev||SHOW VIEW|G
+krp2|schema||dev||TRIGGER|G
+krp2|schema||dev||UPDATE|G
+performance_schema|schema||mysql.session|localhost|SELECT|G
+project3|schema||dev||ALTER|G
+project3|schema||user01||ALTER|G
+project3|schema||dev||ALTER ROUTINE|G
+project3|schema||user01||ALTER ROUTINE|G
+project3|schema||dev||CREATE|G
+project3|schema||user01||CREATE|G
+project3|schema||dev||CREATE ROUTINE|G
+project3|schema||user01||CREATE ROUTINE|G
+project3|schema||dev||CREATE TEMPORARY TABLES|G
+project3|schema||user01||CREATE TEMPORARY TABLES|G
+project3|schema||dev||CREATE VIEW|G
+project3|schema||user01||CREATE VIEW|G
+project3|schema||dev||DELETE|G
+project3|schema||user01||DELETE|G
+project3|schema||dev||DROP|G
+project3|schema||user01||DROP|G
+project3|schema||dev||EVENT|G
+project3|schema||user01||EVENT|G
+project3|schema||dev||EXECUTE|G
+project3|schema||user01||EXECUTE|G
+project3|schema||dev||INDEX|G
+project3|schema||user01||INDEX|G
+project3|schema||dev||INSERT|G
+project3|schema||user01||INSERT|G
+project3|schema||dev||LOCK TABLES|G
+project3|schema||user01||LOCK TABLES|G
+project3|schema||dev||REFERENCES|G
+project3|schema||user01||REFERENCES|G
+project3|schema||dev||SELECT|G
+project3|schema||user01||SELECT|G
+project3|schema||dev||SHOW VIEW|G
+project3|schema||user01||SHOW VIEW|G
+project3|schema||dev||TRIGGER|G
+project3|schema||user01||TRIGGER|G
+project3|schema||dev||UPDATE|G
+project3|schema||user01||UPDATE|G
+project3|schema||user01||grant option|G
+sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
+      <ServerVersion>8.0.35</ServerVersion>
+    </root>
     <collation id="2" parent="1" name="armscii8_bin">
       <Charset>armscii8</Charset>
     </collation>
@@ -906,47 +1290,47 @@
     </schema>
     <schema id="289" parent="1" name="champ">
       <Current>1</Current>
-      <LastIntrospectionLocalTimestamp>2024-03-06.06:25:34</LastIntrospectionLocalTimestamp>
+      <LastIntrospectionLocalTimestamp>2024-03-11.05:07:41</LastIntrospectionLocalTimestamp>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="290" parent="1" name="championship2024">
+    <schema id="290" parent="1" name="champ_backup">
+      <LastIntrospectionLocalTimestamp>2024-03-11.04:58:57</LastIntrospectionLocalTimestamp>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="291" parent="1" name="chushpan">
+    <schema id="291" parent="1" name="championship2024">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="292" parent="1" name="goodfellows">
+    <schema id="292" parent="1" name="chushpan">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="293" parent="1" name="information_schema">
+    <schema id="293" parent="1" name="goodfellows">
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </schema>
+    <schema id="294" parent="1" name="information_schema">
       <CollationName>utf8mb3_general_ci</CollationName>
     </schema>
-    <schema id="294" parent="1" name="krp2">
+    <schema id="295" parent="1" name="krp2">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="295" parent="1" name="mysql">
+    <schema id="296" parent="1" name="mysql">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="296" parent="1" name="netialdb">
+    <schema id="297" parent="1" name="netialdb">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="297" parent="1" name="performance_schema">
+    <schema id="298" parent="1" name="performance_schema">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="298" parent="1" name="pro1_2">
+    <schema id="299" parent="1" name="pro1_2">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="299" parent="1" name="project23">
+    <schema id="300" parent="1" name="project23">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="300" parent="1" name="project3">
+    <schema id="301" parent="1" name="project3">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="301" parent="1" name="sys">
-      <CollationName>utf8mb4_0900_ai_ci</CollationName>
-    </schema>
-    <schema id="302" parent="1" name="test1">
-      <LastIntrospectionLocalTimestamp>2024-03-06.03:17:09</LastIntrospectionLocalTimestamp>
+    <schema id="302" parent="1" name="sys">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
     <user id="303" parent="1" name="debian-sys-maint">
@@ -982,15 +1366,15 @@
     <user id="310" parent="1" name="user01">
       <Plugin>caching_sha2_password</Plugin>
     </user>
-    <table id="311" parent="289" name="Diagnoses">
+    <table id="311" parent="289" name="Departments">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="312" parent="289" name="Doctors">
+    <table id="312" parent="289" name="Diagnoses">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="313" parent="289" name="Genders">
+    <table id="313" parent="289" name="Doctors">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
@@ -998,906 +1382,581 @@
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="315" parent="289" name="MedicalRecords">
+    <table id="315" parent="289" name="InsuranceCompanies">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="316" parent="289" name="Patients">
+    <table id="316" parent="289" name="MeasureTypes">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="317" parent="289" name="Policies">
+    <table id="317" parent="289" name="Measures">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="318" parent="289" name="ProcedureTypes">
+    <table id="318" parent="289" name="MedCards">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="319" parent="289" name="Procedures">
+    <table id="319" parent="289" name="Patients">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="320" parent="289" name="Visits">
+    <table id="320" parent="289" name="Policies">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="321" parent="289" name="__EFMigrationsHistory">
+    <table id="321" parent="289" name="Visits">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="322" parent="302" name="Diagnoses">
+    <table id="322" parent="289" name="__EFMigrationsHistory">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="323" parent="302" name="Doctors">
+    <table id="323" parent="290" name="Patients">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="324" parent="302" name="Genders">
-      <Engine>InnoDB</Engine>
-      <CollationName>utf8mb4_0900_ai_ci</CollationName>
-    </table>
-    <table id="325" parent="302" name="Hospitalizations">
-      <Engine>InnoDB</Engine>
-      <CollationName>utf8mb4_0900_ai_ci</CollationName>
-    </table>
-    <table id="326" parent="302" name="MedicalRecords">
-      <Engine>InnoDB</Engine>
-      <CollationName>utf8mb4_0900_ai_ci</CollationName>
-    </table>
-    <table id="327" parent="302" name="Patients">
-      <Engine>InnoDB</Engine>
-      <CollationName>utf8mb4_0900_ai_ci</CollationName>
-    </table>
-    <table id="328" parent="302" name="Policies">
-      <Engine>InnoDB</Engine>
-      <CollationName>utf8mb4_0900_ai_ci</CollationName>
-    </table>
-    <table id="329" parent="302" name="ProcedureTypes">
-      <Engine>InnoDB</Engine>
-      <CollationName>utf8mb4_0900_ai_ci</CollationName>
-    </table>
-    <table id="330" parent="302" name="Visits">
-      <Engine>InnoDB</Engine>
-      <CollationName>utf8mb4_0900_ai_ci</CollationName>
-    </table>
-    <table id="331" parent="302" name="__EFMigrationsHistory">
-      <Engine>InnoDB</Engine>
-      <CollationName>utf8mb4_0900_ai_ci</CollationName>
-    </table>
-    <column id="332" parent="311" name="DiagnosisId">
+    <column id="324" parent="311" name="DepartmentId">
       <AutoIncrement>1</AutoIncrement>
-      <DasType>int|0s</DasType>
+      <DasType>bigint|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="333" parent="311" name="PatientId">
-      <DasType>int|0s</DasType>
+    <column id="325" parent="311" name="DepartmentName">
+      <DasType>varchar(255)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="334" parent="311" name="Diagnosis">
+    <index id="326" parent="311" name="PRIMARY">
+      <ColNames>DepartmentId</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="327" parent="311" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="328" parent="312" name="DiagnosisId">
+      <AutoIncrement>1</AutoIncrement>
+      <DasType>bigint|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="329" parent="312" name="Diagnosis">
       <DasType>varchar(255)|0s</DasType>
       <NotNull>1</NotNull>
-      <Position>3</Position>
+      <Position>2</Position>
     </column>
-    <column id="335" parent="311" name="MedicalHistory">
-      <DasType>text|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>4</Position>
-    </column>
-    <foreign-key id="336" parent="311" name="Diagnoses_ibfk_1">
-      <ColNames>PatientId</ColNames>
-      <RefColNames>PatientId</RefColNames>
-      <RefTableName>Patients</RefTableName>
-    </foreign-key>
-    <index id="337" parent="311" name="PRIMARY">
+    <index id="330" parent="312" name="PRIMARY">
       <ColNames>DiagnosisId</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="338" parent="311" name="PatientId">
-      <ColNames>PatientId</ColNames>
-      <Type>btree</Type>
-    </index>
-    <key id="339" parent="311" name="PRIMARY">
+    <key id="331" parent="312" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="340" parent="312" name="DoctorId">
+    <column id="332" parent="313" name="DoctorId">
       <AutoIncrement>1</AutoIncrement>
-      <DasType>int|0s</DasType>
+      <DasType>bigint|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="341" parent="312" name="FirstName">
+    <column id="333" parent="313" name="FirstName">
       <DasType>varchar(255)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="342" parent="312" name="LastName">
+    <column id="334" parent="313" name="LastName">
       <DasType>varchar(255)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="343" parent="312" name="MiddleName">
+    <column id="335" parent="313" name="MiddleName">
       <DasType>varchar(255)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
-    <index id="344" parent="312" name="PRIMARY">
+    <index id="336" parent="313" name="PRIMARY">
       <ColNames>DoctorId</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="345" parent="312" name="PRIMARY">
+    <key id="337" parent="313" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="346" parent="313" name="GenderId">
-      <AutoIncrement>3</AutoIncrement>
-      <DasType>int|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>1</Position>
-    </column>
-    <column id="347" parent="313" name="Name">
-      <DasType>varchar(255)|0s</DasType>
-      <Position>2</Position>
-    </column>
-    <index id="348" parent="313" name="PRIMARY">
-      <ColNames>GenderId</ColNames>
-      <Type>btree</Type>
-      <Unique>1</Unique>
-    </index>
-    <key id="349" parent="313" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <Primary>1</Primary>
-      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
-    </key>
-    <column id="350" parent="314" name="HospitalizationId">
+    <column id="338" parent="314" name="HospitalizationId">
       <AutoIncrement>1</AutoIncrement>
-      <DasType>int|0s</DasType>
+      <DasType>bigint|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="351" parent="314" name="PatientId">
-      <DasType>int|0s</DasType>
+    <column id="339" parent="314" name="MedCardId">
+      <DasType>bigint|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="352" parent="314" name="AdmissionDate">
-      <DasType>date|0s</DasType>
+    <column id="340" parent="314" name="DiagosisId">
+      <DasType>bigint|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="353" parent="314" name="DischargeDate">
-      <DasType>date|0s</DasType>
+    <column id="341" parent="314" name="Purpose">
+      <DasType>varchar(4096)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
-    <column id="354" parent="314" name="Reason">
-      <DasType>varchar(255)|0s</DasType>
+    <column id="342" parent="314" name="IsPaid">
+      <DasType>tinyint(1)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>5</Position>
     </column>
-    <column id="355" parent="314" name="Additional">
-      <DasType>json|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>6</Position>
-    </column>
-    <foreign-key id="356" parent="314" name="Hospitalizations_ibfk_1">
-      <ColNames>PatientId</ColNames>
-      <RefColNames>PatientId</RefColNames>
-      <RefTableName>Patients</RefTableName>
-    </foreign-key>
-    <index id="357" parent="314" name="PRIMARY">
-      <ColNames>HospitalizationId</ColNames>
-      <Type>btree</Type>
-      <Unique>1</Unique>
-    </index>
-    <index id="358" parent="314" name="PatientId">
-      <ColNames>PatientId</ColNames>
-      <Type>btree</Type>
-    </index>
-    <key id="359" parent="314" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <Primary>1</Primary>
-      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
-    </key>
-    <column id="360" parent="315" name="MedicalRecordId">
-      <AutoIncrement>1</AutoIncrement>
-      <DasType>int|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>1</Position>
-    </column>
-    <column id="361" parent="315" name="PatientId">
-      <DasType>int|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>2</Position>
-    </column>
-    <column id="362" parent="315" name="MedicalCardNumber">
-      <DasType>varchar(20)|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>3</Position>
-    </column>
-    <column id="363" parent="315" name="DateOfIssue">
-      <DasType>date|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>4</Position>
-    </column>
-    <foreign-key id="364" parent="315" name="MedicalRecords_ibfk_1">
-      <ColNames>PatientId</ColNames>
-      <RefColNames>PatientId</RefColNames>
-      <RefTableName>Patients</RefTableName>
-    </foreign-key>
-    <index id="365" parent="315" name="PRIMARY">
-      <ColNames>MedicalRecordId</ColNames>
-      <Type>btree</Type>
-      <Unique>1</Unique>
-    </index>
-    <index id="366" parent="315" name="PatientId">
-      <ColNames>PatientId</ColNames>
-      <Type>btree</Type>
-    </index>
-    <key id="367" parent="315" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <Primary>1</Primary>
-      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
-    </key>
-    <column id="368" parent="316" name="PatientId">
-      <AutoIncrement>1</AutoIncrement>
-      <DasType>int|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>1</Position>
-    </column>
-    <column id="369" parent="316" name="Photo">
-      <DasType>mediumblob|0s</DasType>
-      <Position>2</Position>
-    </column>
-    <column id="370" parent="316" name="FirstName">
-      <DasType>varchar(255)|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>3</Position>
-    </column>
-    <column id="371" parent="316" name="LastName">
-      <DasType>varchar(255)|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>4</Position>
-    </column>
-    <column id="372" parent="316" name="MiddleName">
-      <DasType>varchar(255)|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>5</Position>
-    </column>
-    <column id="373" parent="316" name="PassportNumber">
-      <DasType>varchar(20)|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>6</Position>
-    </column>
-    <column id="374" parent="316" name="DateOfBirth">
+    <column id="343" parent="314" name="DateStart">
       <DasType>timestamp|0s</DasType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <NotNull>1</NotNull>
+      <OnUpdate>CURRENT_TIMESTAMP</OnUpdate>
+      <Position>6</Position>
+    </column>
+    <column id="344" parent="314" name="DateEnd">
+      <DasType>timestamp|0s</DasType>
+      <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
+      <NotNull>1</NotNull>
+      <OnUpdate>CURRENT_TIMESTAMP</OnUpdate>
       <Position>7</Position>
     </column>
-    <column id="375" parent="316" name="GenderId">
-      <DasType>int|0s</DasType>
-      <NotNull>1</NotNull>
+    <column id="345" parent="314" name="AdditionalInfo">
+      <DasType>varchar(4096)|0s</DasType>
       <Position>8</Position>
     </column>
-    <column id="376" parent="316" name="Address">
-      <DasType>varchar(255)|0s</DasType>
+    <column id="346" parent="314" name="IsRejected">
+      <DasType>tinyint(1)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>9</Position>
     </column>
-    <column id="377" parent="316" name="PhoneNumber">
-      <DasType>varchar(20)|0s</DasType>
-      <NotNull>1</NotNull>
+    <column id="347" parent="314" name="RejectionReason">
+      <DasType>varchar(4096)|0s</DasType>
       <Position>10</Position>
     </column>
-    <column id="378" parent="316" name="Email">
-      <DasType>varchar(255)|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>11</Position>
-    </column>
-    <foreign-key id="379" parent="316" name="Patients_ibfk_1">
-      <ColNames>GenderId</ColNames>
-      <RefColNames>GenderId</RefColNames>
-      <RefTableName>Genders</RefTableName>
-    </foreign-key>
-    <index id="380" parent="316" name="PRIMARY">
-      <ColNames>PatientId</ColNames>
-      <Type>btree</Type>
-      <Unique>1</Unique>
-    </index>
-    <index id="381" parent="316" name="GenderId">
-      <ColNames>GenderId</ColNames>
-      <Type>btree</Type>
-    </index>
-    <key id="382" parent="316" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <Primary>1</Primary>
-      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
-    </key>
-    <column id="383" parent="317" name="PolicyId">
-      <AutoIncrement>1</AutoIncrement>
-      <DasType>int|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>1</Position>
-    </column>
-    <column id="384" parent="317" name="PolicyNumber">
-      <DasType>bigint|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>2</Position>
-    </column>
-    <column id="385" parent="317" name="InsuranceCompany">
-      <DasType>varchar(255)|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>3</Position>
-    </column>
-    <column id="386" parent="317" name="ExpirationDate">
-      <DasType>date|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>4</Position>
-    </column>
-    <column id="387" parent="317" name="PatientId">
-      <DasType>int|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>5</Position>
-    </column>
-    <foreign-key id="388" parent="317" name="Policies_ibfk_1">
-      <ColNames>PatientId</ColNames>
-      <RefColNames>PatientId</RefColNames>
-      <RefTableName>Patients</RefTableName>
-    </foreign-key>
-    <index id="389" parent="317" name="PRIMARY">
-      <ColNames>PolicyId</ColNames>
-      <Type>btree</Type>
-      <Unique>1</Unique>
-    </index>
-    <index id="390" parent="317" name="PatientId">
-      <ColNames>PatientId</ColNames>
-      <Type>btree</Type>
-    </index>
-    <key id="391" parent="317" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <Primary>1</Primary>
-      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
-    </key>
-    <column id="392" parent="318" name="ProcedureTypeId">
-      <AutoIncrement>1</AutoIncrement>
-      <DasType>int|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>1</Position>
-    </column>
-    <column id="393" parent="318" name="ProcedureTypeName">
-      <DasType>varchar(50)|0s</DasType>
-      <Position>2</Position>
-    </column>
-    <index id="394" parent="318" name="PRIMARY">
-      <ColNames>ProcedureTypeId</ColNames>
-      <Type>btree</Type>
-      <Unique>1</Unique>
-    </index>
-    <key id="395" parent="318" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <Primary>1</Primary>
-      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
-    </key>
-    <column id="396" parent="319" name="ProcedureId">
-      <AutoIncrement>1</AutoIncrement>
-      <DasType>int|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>1</Position>
-    </column>
-    <column id="397" parent="319" name="PatientId">
-      <DasType>int|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>2</Position>
-    </column>
-    <column id="398" parent="319" name="ProcedureDate">
-      <DasType>date|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>3</Position>
-    </column>
-    <column id="399" parent="319" name="DoctorId">
-      <DasType>int|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>4</Position>
-    </column>
-    <column id="400" parent="319" name="ProcedureTypeId">
-      <DasType>int|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>5</Position>
-    </column>
-    <column id="401" parent="319" name="ProcedureName">
-      <DasType>varchar(255)|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>6</Position>
-    </column>
-    <column id="402" parent="319" name="Results">
-      <DasType>text|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>7</Position>
-    </column>
-    <column id="403" parent="319" name="Recommendations">
-      <DasType>text|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>8</Position>
-    </column>
-    <foreign-key id="404" parent="319" name="Procedures_ibfk_1">
-      <ColNames>PatientId</ColNames>
-      <RefColNames>PatientId</RefColNames>
-      <RefTableName>Patients</RefTableName>
-    </foreign-key>
-    <foreign-key id="405" parent="319" name="Procedures_ibfk_2">
-      <ColNames>DoctorId</ColNames>
-      <RefColNames>DoctorId</RefColNames>
-      <RefTableName>Doctors</RefTableName>
-    </foreign-key>
-    <foreign-key id="406" parent="319" name="Procedures_ibfk_3">
-      <ColNames>ProcedureTypeId</ColNames>
-      <RefColNames>ProcedureTypeId</RefColNames>
-      <RefTableName>ProcedureTypes</RefTableName>
-    </foreign-key>
-    <index id="407" parent="319" name="PRIMARY">
-      <ColNames>ProcedureId</ColNames>
-      <Type>btree</Type>
-      <Unique>1</Unique>
-    </index>
-    <index id="408" parent="319" name="PatientId">
-      <ColNames>PatientId</ColNames>
-      <Type>btree</Type>
-    </index>
-    <index id="409" parent="319" name="DoctorId">
-      <ColNames>DoctorId</ColNames>
-      <Type>btree</Type>
-    </index>
-    <index id="410" parent="319" name="ProcedureTypeId">
-      <ColNames>ProcedureTypeId</ColNames>
-      <Type>btree</Type>
-    </index>
-    <key id="411" parent="319" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <Primary>1</Primary>
-      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
-    </key>
-    <column id="412" parent="320" name="VisitId">
-      <AutoIncrement>1</AutoIncrement>
-      <DasType>int|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>1</Position>
-    </column>
-    <column id="413" parent="320" name="PatientId">
-      <DasType>int|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>2</Position>
-    </column>
-    <column id="414" parent="320" name="Date">
-      <DasType>date|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>3</Position>
-    </column>
-    <foreign-key id="415" parent="320" name="Visits_ibfk_1">
-      <ColNames>PatientId</ColNames>
-      <RefColNames>PatientId</RefColNames>
-      <RefTableName>Patients</RefTableName>
-    </foreign-key>
-    <index id="416" parent="320" name="PRIMARY">
-      <ColNames>VisitId</ColNames>
-      <Type>btree</Type>
-      <Unique>1</Unique>
-    </index>
-    <index id="417" parent="320" name="PatientId">
-      <ColNames>PatientId</ColNames>
-      <Type>btree</Type>
-    </index>
-    <key id="418" parent="320" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <Primary>1</Primary>
-      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
-    </key>
-    <column id="419" parent="321" name="MigrationId">
-      <DasType>varchar(150)|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>1</Position>
-    </column>
-    <column id="420" parent="321" name="ProductVersion">
-      <DasType>varchar(32)|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>2</Position>
-    </column>
-    <index id="421" parent="321" name="PRIMARY">
-      <ColNames>MigrationId</ColNames>
-      <Type>btree</Type>
-      <Unique>1</Unique>
-    </index>
-    <key id="422" parent="321" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <Primary>1</Primary>
-      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
-    </key>
-    <column id="423" parent="322" name="DiagnosisId">
-      <AutoIncrement>1</AutoIncrement>
-      <DasType>int|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>1</Position>
-    </column>
-    <column id="424" parent="322" name="PatientId">
-      <DasType>int|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>2</Position>
-    </column>
-    <column id="425" parent="322" name="Diagnosis">
-      <DasType>varchar(255)|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>3</Position>
-    </column>
-    <column id="426" parent="322" name="MedicalHistory">
-      <DasType>text|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>4</Position>
-    </column>
-    <foreign-key id="427" parent="322" name="FK_Diagnoses_Patients_PatientId">
-      <ColNames>PatientId</ColNames>
+    <foreign-key id="348" parent="314" name="FK_Hospitalizations_MedCards_MedCardId">
+      <ColNames>MedCardId</ColNames>
       <OnDelete>cascade</OnDelete>
-      <RefColNames>PatientId</RefColNames>
-      <RefTableName>Patients</RefTableName>
+      <RefColNames>MedCardId</RefColNames>
+      <RefTableName>MedCards</RefTableName>
     </foreign-key>
-    <index id="428" parent="322" name="PRIMARY">
-      <ColNames>DiagnosisId</ColNames>
-      <Type>btree</Type>
-      <Unique>1</Unique>
-    </index>
-    <index id="429" parent="322" name="IX_Diagnoses_PatientId">
-      <ColNames>PatientId</ColNames>
-      <Type>btree</Type>
-    </index>
-    <key id="430" parent="322" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <Primary>1</Primary>
-      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
-    </key>
-    <column id="431" parent="323" name="DoctorId">
-      <AutoIncrement>1</AutoIncrement>
-      <DasType>int|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>1</Position>
-    </column>
-    <column id="432" parent="323" name="FirstName">
-      <DasType>varchar(255)|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>2</Position>
-    </column>
-    <column id="433" parent="323" name="LastName">
-      <DasType>varchar(255)|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>3</Position>
-    </column>
-    <column id="434" parent="323" name="MiddleName">
-      <DasType>varchar(255)|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>4</Position>
-    </column>
-    <index id="435" parent="323" name="PRIMARY">
-      <ColNames>DoctorId</ColNames>
-      <Type>btree</Type>
-      <Unique>1</Unique>
-    </index>
-    <key id="436" parent="323" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <Primary>1</Primary>
-      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
-    </key>
-    <column id="437" parent="324" name="GenderId">
-      <AutoIncrement>1</AutoIncrement>
-      <DasType>int|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>1</Position>
-    </column>
-    <column id="438" parent="324" name="Name">
-      <DasType>longtext|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>2</Position>
-    </column>
-    <index id="439" parent="324" name="PRIMARY">
-      <ColNames>GenderId</ColNames>
-      <Type>btree</Type>
-      <Unique>1</Unique>
-    </index>
-    <key id="440" parent="324" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <Primary>1</Primary>
-      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
-    </key>
-    <column id="441" parent="325" name="HospitalizationId">
-      <AutoIncrement>1</AutoIncrement>
-      <DasType>int|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>1</Position>
-    </column>
-    <column id="442" parent="325" name="PatientId">
-      <DasType>int|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>2</Position>
-    </column>
-    <column id="443" parent="325" name="AdmissionDate">
-      <DasType>date|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>3</Position>
-    </column>
-    <column id="444" parent="325" name="DischargeDate">
-      <DasType>date|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>4</Position>
-    </column>
-    <column id="445" parent="325" name="Reason">
-      <DasType>varchar(255)|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>5</Position>
-    </column>
-    <column id="446" parent="325" name="Additional">
-      <DasType>json|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>6</Position>
-    </column>
-    <foreign-key id="447" parent="325" name="FK_Hospitalizations_Patients_PatientId">
-      <ColNames>PatientId</ColNames>
+    <foreign-key id="349" parent="314" name="FK_Hospitalizations_Diagnoses_DiagosisId">
+      <ColNames>DiagosisId</ColNames>
       <OnDelete>cascade</OnDelete>
-      <RefColNames>PatientId</RefColNames>
-      <RefTableName>Patients</RefTableName>
+      <RefColNames>DiagnosisId</RefColNames>
+      <RefTableName>Diagnoses</RefTableName>
     </foreign-key>
-    <index id="448" parent="325" name="PRIMARY">
+    <index id="350" parent="314" name="PRIMARY">
       <ColNames>HospitalizationId</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="449" parent="325" name="IX_Hospitalizations_PatientId">
-      <ColNames>PatientId</ColNames>
+    <index id="351" parent="314" name="IX_Hospitalizations_MedCardId">
+      <ColNames>MedCardId</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="450" parent="325" name="PRIMARY">
+    <index id="352" parent="314" name="IX_Hospitalizations_DiagosisId">
+      <ColNames>DiagosisId</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="353" parent="314" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="451" parent="326" name="MedicalRecordId">
+    <column id="354" parent="315" name="InsuranceCompanyId">
       <AutoIncrement>1</AutoIncrement>
-      <DasType>int|0s</DasType>
+      <DasType>bigint|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="452" parent="326" name="PatientId">
-      <DasType>int|0s</DasType>
+    <column id="355" parent="315" name="Name">
+      <DasType>varchar(255)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="453" parent="326" name="MedicalCardNumber">
-      <DasType>varchar(20)|0s</DasType>
+    <index id="356" parent="315" name="PRIMARY">
+      <ColNames>InsuranceCompanyId</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="357" parent="315" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="358" parent="316" name="MeasureTypeId">
+      <AutoIncrement>1</AutoIncrement>
+      <DasType>bigint|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="359" parent="316" name="Name">
+      <DasType>varchar(255)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <index id="360" parent="316" name="PRIMARY">
+      <ColNames>MeasureTypeId</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="361" parent="316" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="362" parent="317" name="MeasureId">
+      <AutoIncrement>1</AutoIncrement>
+      <DasType>bigint|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="363" parent="317" name="MedCardId">
+      <DasType>bigint|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <column id="364" parent="317" name="MeasureDate">
+      <DasType>timestamp|0s</DasType>
+      <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
+      <NotNull>1</NotNull>
+      <OnUpdate>CURRENT_TIMESTAMP</OnUpdate>
+      <Position>3</Position>
+    </column>
+    <column id="365" parent="317" name="DoctorId">
+      <DasType>bigint|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+    </column>
+    <column id="366" parent="317" name="MeasureTypeId">
+      <DasType>bigint|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>5</Position>
+    </column>
+    <column id="367" parent="317" name="MeasureName">
+      <DasType>varchar(255)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>6</Position>
+    </column>
+    <column id="368" parent="317" name="Results">
+      <DasType>varchar(4096)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>7</Position>
+    </column>
+    <column id="369" parent="317" name="Recommendations">
+      <DasType>varchar(4096)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>8</Position>
+    </column>
+    <foreign-key id="370" parent="317" name="FK_Measures_MedCards_MedCardId">
+      <ColNames>MedCardId</ColNames>
+      <OnDelete>cascade</OnDelete>
+      <RefColNames>MedCardId</RefColNames>
+      <RefTableName>MedCards</RefTableName>
+    </foreign-key>
+    <foreign-key id="371" parent="317" name="FK_Measures_Doctors_DoctorId">
+      <ColNames>DoctorId</ColNames>
+      <OnDelete>cascade</OnDelete>
+      <RefColNames>DoctorId</RefColNames>
+      <RefTableName>Doctors</RefTableName>
+    </foreign-key>
+    <foreign-key id="372" parent="317" name="FK_Measures_MeasureTypes_MeasureTypeId">
+      <ColNames>MeasureTypeId</ColNames>
+      <OnDelete>cascade</OnDelete>
+      <RefColNames>MeasureTypeId</RefColNames>
+      <RefTableName>MeasureTypes</RefTableName>
+    </foreign-key>
+    <index id="373" parent="317" name="PRIMARY">
+      <ColNames>MeasureId</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="374" parent="317" name="IX_Measures_MedCardId">
+      <ColNames>MedCardId</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="375" parent="317" name="IX_Measures_DoctorId">
+      <ColNames>DoctorId</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="376" parent="317" name="IX_Measures_MeasureTypeId">
+      <ColNames>MeasureTypeId</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="377" parent="317" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="378" parent="318" name="MedCardId">
+      <AutoIncrement>1</AutoIncrement>
+      <DasType>bigint|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="379" parent="318" name="PatientId">
+      <DasType>bigint|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <column id="380" parent="318" name="DateOfIssue">
+      <DasType>datetime(6)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <foreign-key id="454" parent="326" name="FK_MedicalRecords_Patients_PatientId">
+    <foreign-key id="381" parent="318" name="FK_MedCards_Patients_PatientId">
       <ColNames>PatientId</ColNames>
       <OnDelete>cascade</OnDelete>
       <RefColNames>PatientId</RefColNames>
       <RefTableName>Patients</RefTableName>
     </foreign-key>
-    <index id="455" parent="326" name="PRIMARY">
-      <ColNames>MedicalRecordId</ColNames>
+    <index id="382" parent="318" name="PRIMARY">
+      <ColNames>MedCardId</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="456" parent="326" name="IX_MedicalRecords_PatientId">
+    <index id="383" parent="318" name="IX_MedCards_PatientId">
       <ColNames>PatientId</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="457" parent="326" name="PRIMARY">
+    <key id="384" parent="318" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="458" parent="327" name="PatientId">
+    <column id="385" parent="319" name="PatientId">
       <AutoIncrement>1</AutoIncrement>
-      <DasType>int|0s</DasType>
+      <DasType>bigint|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="459" parent="327" name="Photo">
-      <DasType>longblob|0s</DasType>
+    <column id="386" parent="319" name="Photo">
+      <DasType>mediumblob|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="460" parent="327" name="FirstName">
+    <column id="387" parent="319" name="FirstName">
       <DasType>varchar(255)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="461" parent="327" name="LastName">
+    <column id="388" parent="319" name="LastName">
       <DasType>varchar(255)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
-    <column id="462" parent="327" name="MiddleName">
+    <column id="389" parent="319" name="MiddleName">
       <DasType>varchar(255)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>5</Position>
     </column>
-    <column id="463" parent="327" name="PassportNumber">
+    <column id="390" parent="319" name="PassportNumber">
       <DasType>bigint|0s</DasType>
       <NotNull>1</NotNull>
       <Position>6</Position>
     </column>
-    <column id="464" parent="327" name="DateOfBirth">
-      <DasType>date|0s</DasType>
+    <column id="391" parent="319" name="DateOfBirth">
+      <DasType>timestamp|0s</DasType>
+      <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <NotNull>1</NotNull>
+      <OnUpdate>CURRENT_TIMESTAMP</OnUpdate>
       <Position>7</Position>
     </column>
-    <column id="465" parent="327" name="GenderId">
+    <column id="392" parent="319" name="GenderId">
       <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>8</Position>
     </column>
-    <column id="466" parent="327" name="Address">
+    <column id="393" parent="319" name="Address">
       <DasType>varchar(255)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>9</Position>
     </column>
-    <column id="467" parent="327" name="PhoneNumber">
-      <DasType>longtext|0s</DasType>
+    <column id="394" parent="319" name="PhoneNumber">
+      <DasType>varchar(20)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>10</Position>
     </column>
-    <column id="468" parent="327" name="Email">
-      <DasType>longtext|0s</DasType>
+    <column id="395" parent="319" name="Email">
+      <DasType>varchar(255)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>11</Position>
     </column>
-    <foreign-key id="469" parent="327" name="FK_Patients_Genders_GenderId">
-      <ColNames>GenderId</ColNames>
-      <OnDelete>cascade</OnDelete>
-      <RefColNames>GenderId</RefColNames>
-      <RefTableName>Genders</RefTableName>
-    </foreign-key>
-    <index id="470" parent="327" name="PRIMARY">
+    <index id="396" parent="319" name="PRIMARY">
       <ColNames>PatientId</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="471" parent="327" name="IX_Patients_GenderId">
-      <ColNames>GenderId</ColNames>
-      <Type>btree</Type>
-    </index>
-    <key id="472" parent="327" name="PRIMARY">
+    <key id="397" parent="319" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="473" parent="328" name="PolicyId">
+    <column id="398" parent="320" name="PolicyId">
       <AutoIncrement>1</AutoIncrement>
-      <DasType>int|0s</DasType>
+      <DasType>bigint|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="474" parent="328" name="PolicyNumber">
+    <column id="399" parent="320" name="InsuranceCompanyId">
       <DasType>bigint|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="475" parent="328" name="InsuranceCompany">
-      <DasType>varchar(255)|0s</DasType>
+    <column id="400" parent="320" name="ExpirationDate">
+      <DasType>timestamp|0s</DasType>
+      <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <NotNull>1</NotNull>
+      <OnUpdate>CURRENT_TIMESTAMP</OnUpdate>
       <Position>3</Position>
     </column>
-    <column id="476" parent="328" name="ExpirationDate">
-      <DasType>date|0s</DasType>
+    <column id="401" parent="320" name="PatientId">
+      <DasType>bigint|0s</DasType>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
-    <column id="477" parent="328" name="PatientId">
-      <DasType>int|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>5</Position>
-    </column>
-    <foreign-key id="478" parent="328" name="FK_Policies_Patients_PatientId">
+    <foreign-key id="402" parent="320" name="FK_Policies_InsuranceCompanies_InsuranceCompanyId">
+      <ColNames>InsuranceCompanyId</ColNames>
+      <OnDelete>cascade</OnDelete>
+      <RefColNames>InsuranceCompanyId</RefColNames>
+      <RefTableName>InsuranceCompanies</RefTableName>
+    </foreign-key>
+    <foreign-key id="403" parent="320" name="FK_Policies_Patients_PatientId">
       <ColNames>PatientId</ColNames>
       <OnDelete>cascade</OnDelete>
       <RefColNames>PatientId</RefColNames>
       <RefTableName>Patients</RefTableName>
     </foreign-key>
-    <index id="479" parent="328" name="PRIMARY">
+    <index id="404" parent="320" name="PRIMARY">
       <ColNames>PolicyId</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="480" parent="328" name="IX_Policies_PatientId">
+    <index id="405" parent="320" name="IX_Policies_InsuranceCompanyId">
+      <ColNames>InsuranceCompanyId</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="406" parent="320" name="IX_Policies_PatientId">
       <ColNames>PatientId</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="481" parent="328" name="PRIMARY">
+    <key id="407" parent="320" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="482" parent="329" name="ProcedureTypeId">
+    <column id="408" parent="321" name="VisitId">
       <AutoIncrement>1</AutoIncrement>
       <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="483" parent="329" name="ProcedureTypeName">
-      <DasType>varchar(50)|0s</DasType>
+    <column id="409" parent="321" name="PatientId">
+      <DasType>bigint|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <index id="484" parent="329" name="PRIMARY">
-      <ColNames>ProcedureTypeId</ColNames>
-      <Type>btree</Type>
-      <Unique>1</Unique>
-    </index>
-    <key id="485" parent="329" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <Primary>1</Primary>
-      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
-    </key>
-    <column id="486" parent="330" name="VisitId">
-      <AutoIncrement>1</AutoIncrement>
-      <DasType>int|0s</DasType>
+    <column id="410" parent="321" name="Date">
+      <DasType>datetime(6)|0s</DasType>
+      <DefaultExpression>CURRENT_TIMESTAMP(6)</DefaultExpression>
       <NotNull>1</NotNull>
-      <Position>1</Position>
-    </column>
-    <column id="487" parent="330" name="PatientId">
-      <DasType>int|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>2</Position>
-    </column>
-    <column id="488" parent="330" name="Date">
-      <DasType>date|0s</DasType>
-      <NotNull>1</NotNull>
+      <OnUpdate>CURRENT_TIMESTAMP(6)</OnUpdate>
       <Position>3</Position>
     </column>
-    <foreign-key id="489" parent="330" name="FK_Visits_Patients_PatientId">
+    <foreign-key id="411" parent="321" name="FK_Visits_Patients_PatientId">
       <ColNames>PatientId</ColNames>
       <OnDelete>cascade</OnDelete>
       <RefColNames>PatientId</RefColNames>
       <RefTableName>Patients</RefTableName>
     </foreign-key>
-    <index id="490" parent="330" name="PRIMARY">
+    <index id="412" parent="321" name="PRIMARY">
       <ColNames>VisitId</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="491" parent="330" name="IX_Visits_PatientId">
+    <index id="413" parent="321" name="IX_Visits_PatientId">
       <ColNames>PatientId</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="492" parent="330" name="PRIMARY">
+    <key id="414" parent="321" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="493" parent="331" name="MigrationId">
+    <column id="415" parent="322" name="MigrationId">
       <DasType>varchar(150)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="494" parent="331" name="ProductVersion">
+    <column id="416" parent="322" name="ProductVersion">
       <DasType>varchar(32)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <index id="495" parent="331" name="PRIMARY">
+    <index id="417" parent="322" name="PRIMARY">
       <ColNames>MigrationId</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="496" parent="331" name="PRIMARY">
+    <key id="418" parent="322" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
+    <column id="419" parent="323" name="PatientId">
+      <DasType>int|0s</DasType>
+      <Position>1</Position>
+    </column>
+    <column id="420" parent="323" name="Photo">
+      <DasType>mediumblob|0s</DasType>
+      <Position>2</Position>
+    </column>
+    <column id="421" parent="323" name="FirstName">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>3</Position>
+    </column>
+    <column id="422" parent="323" name="LastName">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>4</Position>
+    </column>
+    <column id="423" parent="323" name="MiddleName">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>5</Position>
+    </column>
+    <column id="424" parent="323" name="PassportNumber">
+      <DasType>varchar(20)|0s</DasType>
+      <Position>6</Position>
+    </column>
+    <column id="425" parent="323" name="DateOfBirth">
+      <DasType>timestamp|0s</DasType>
+      <Position>7</Position>
+    </column>
+    <column id="426" parent="323" name="GenderId">
+      <DasType>int|0s</DasType>
+      <Position>8</Position>
+    </column>
+    <column id="427" parent="323" name="Address">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>9</Position>
+    </column>
+    <column id="428" parent="323" name="PhoneNumber">
+      <DasType>varchar(20)|0s</DasType>
+      <Position>10</Position>
+    </column>
+    <column id="429" parent="323" name="Email">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>11</Position>
+    </column>
   </database-model>
 </dataSource>

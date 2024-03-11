@@ -7,7 +7,7 @@ public class Visit {
     public int VisitId { get; set; }
 
     [ForeignKey(nameof(Patient))]
-    public int PatientId { get; set; }
+    public long PatientId { get; set; }
 
     public Patient? Patient { get; set; }
 

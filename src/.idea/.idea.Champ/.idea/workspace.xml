@@ -10,33 +10,35 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="72915fbf-73e4-4d91-9eac-54e35cbea70d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.Champ/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.Champ/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.Champ/.idea/discord.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Champ.Front/@shadcn/components/ui/button.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Champ.Front/@shadcn/components/ui/form.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Champ.Front/@shadcn/components/ui/input.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Champ.Front/@shadcn/components/ui/label.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Champ.Front/@shadcn/components/ui/select.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Champ.Front/@shadcn/lib/utils.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Champ.Front/components.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Champ.API/Controllers/PatientController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Champ.API/Models/Department.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Champ.API/Models/Measure.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Champ.API/Models/MeasureType.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Champ/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Champ/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Champ/.idea/dataSources/351db698-b21f-4b50-ba12-9924472c2730.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Champ/.idea/dataSources/351db698-b21f-4b50-ba12-9924472c2730.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Champ/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Champ/.idea/indexLayout.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Champ/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Champ/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Champ/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Champ/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Champ.API/ApplicationContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Champ.API/ApplicationContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Champ.API/Controllers/GenderController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Champ.API/Models/Diagnosis.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Champ.API/Models/Diagnosis.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Champ.API/Models/Doctor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Champ.API/Models/Doctor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Champ.API/Models/Gender.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Champ.API/Models/InsuranceCompany.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Champ.API/Models/Hospitalization.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Champ.API/Models/Hospitalization.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Champ.API/Models/MedicalRecord.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Champ.API/Models/MedCard.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Champ.API/Models/Patient.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Champ.API/Models/Patient.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Champ.API/Models/Policy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Champ.API/Models/Policy.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Champ.API/Models/Procedure.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Champ.API/Models/ProcedureType.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Champ.API/Models/Visit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Champ.API/Models/Visit.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Champ.API/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Champ.API/Program.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Champ.API/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/Champ.API/appsettings.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Champ.Front/bun.lockb" beforeDir="false" afterPath="$PROJECT_DIR$/Champ.Front/bun.lockb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Champ.Front/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/Champ.Front/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Champ.Front/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/Champ.Front/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Champ.Front/src/components/card/Card.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/Champ.Front/src/components/card/Card.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Champ.Front/src/components/card/card.css" beforeDir="false" afterPath="$PROJECT_DIR$/Champ.Front/src/components/card/card.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Champ.Front/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/Champ.Front/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Champ.Front/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/Champ.Front/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Champ.Front/src/api/client.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Champ.Front/src/api/client.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Champ.Front/src/models/Patient.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Champ.Front/src/models/Patient.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Champ.Front/src/pages/PatientRegister.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/Champ.Front/src/pages/PatientRegister.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Champ.Front/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/Champ.Front/tailwind.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Champ.Front/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/Champ.Front/tsconfig.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Champ.Front/vite.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Champ.Front/vite.config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Champ.Mock/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Champ.Mock/Program.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,7 +62,8 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/bd1669d1392f4ba6a95238492a7b3796ae3a00/8a/3ce5b10e/ExceptionDispatchInfo.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/ce31500defe742bd9cabe8e9ee7a87391fd5b0/16/9f3c47d5/DbContext.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/fdd0283b73c6b27c4cc6059adbe7dd937dc4725c8256542f20457947af1b8/ServerSession.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///home/student/RiderProjects/Champ/src/Champ.API/ApplicationContext.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///home/student/RiderProjects/Champ/src/Champ.API/Models/Policy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///home/student/RiderProjects/Champ/src/Champ.API/Models/Policy.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProblemsViewState">
@@ -71,49 +74,50 @@
   &quot;associatedIndex&quot;: 6
 }</component>
   <component name="ProjectId" id="2dFYlB71BH2d0KM83ZGOHZ9AGKR" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;.NET Launch Settings Profile.Champ.API: http.executor&quot;: &quot;Run&quot;,
-    &quot;.NET Project.Champ.Mock.executor&quot;: &quot;Debug&quot;,
-    &quot;Attach to Node.js/Chrome.Browser.executor&quot;: &quot;Debug&quot;,
-    &quot;JavaScript Debug.Unnamed.executor&quot;: &quot;Debug&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/delta/RiderProjects/Champ/src/Champ.Front&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_interpreter_path&quot;: &quot;/home/delta/.local/bin/bun&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;/home/delta/.local/bin/bun&quot;,
-    &quot;npm.dev.executor&quot;: &quot;Run&quot;,
-    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;/home/student/RiderProjects/Champ/src/Champ.Front/node_modules/prettier&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.codeium.AppSettingsConfigurable&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/home/delta/RiderProjects/Champ/src/Champ.Front/node_modules/typescript/lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    ".NET Launch Settings Profile.Champ.API: http.executor": "Debug",
+    ".NET Project.Champ.Mock.executor": "Debug",
+    "Attach to Node.js/Chrome.Browser.executor": "Debug",
+    "JavaScript Debug.Unnamed.executor": "Debug",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "/home/student/.bun/bin/bun",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_interpreter_path": "node",
+    "nodejs_package_manager_path": "/home/delta/.local/bin/bun",
+    "npm.dev.executor": "Run",
+    "prettierjs.PrettierConfiguration.Package": "/home/student/RiderProjects/Champ/src/Champ.Front/node_modules/prettier",
+    "settings.editor.selected.configurable": "com.codeium.AppSettingsConfigurable",
+    "ts.external.directory.path": "/home/student/RiderProjects/Champ/src/Champ.Front/node_modules/typescript/lib",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;h2&quot;,
-      &quot;mysql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "h2",
+      "mysql"
     ],
-    &quot;com.intellij.ide.scratch.LRUPopupBuilder$1/&quot;: [
-      &quot;MySQL&quot;
+    "com.intellij.ide.scratch.LRUPopupBuilder$1/": [
+      "MySQL"
     ],
-    &quot;rider.external.source.directories&quot;: [
-      &quot;/home/delta/.config/JetBrains/Rider2023.3/resharper-host/DecompilerCache&quot;,
-      &quot;/home/delta/.config/JetBrains/Rider2023.3/resharper-host/SourcesCache&quot;,
-      &quot;/home/delta/.local/share/Symbols/src&quot;
+    "rider.external.source.directories": [
+      "/home/student/.config/JetBrains/Rider2023.3/resharper-host/DecompilerCache",
+      "/home/student/.config/JetBrains/Rider2023.3/resharper-host/SourcesCache",
+      "/home/student/.local/share/Symbols/src"
     ]
   }
-}</component>
-  <component name="RunManager" selected=".NET Launch Settings Profile.Champ.API: http">
+}]]></component>
+  <component name="RunManager" selected="npm.dev">
     <configuration name="Run all" type="CompoundRunConfigurationType">
       <toRun name="Champ.API: http" type="LaunchSettings" />
       <toRun name="dev" type="js.build_tools.npm" />
@@ -173,7 +177,8 @@
       <scripts>
         <script value="dev" />
       </scripts>
-      <node-interpreter value="project" />
+      <node-interpreter value="$USER_HOME$/.bun/bin/bun" />
+      <package-manager value="$USER_HOME$/.bun/bin/bun" />
       <envs />
       <method v="2" />
     </configuration>
@@ -201,6 +206,7 @@
       <workItem from="1709890741632" duration="2842000" />
       <workItem from="1709915974528" duration="4681000" />
       <workItem from="1709920669046" duration="1328000" />
+      <workItem from="1710122374345" duration="14976000" />
     </task>
     <task id="LOCAL-00001" summary="feat(API): созданы модели данных">
       <option name="closed" value="true" />
@@ -217,6 +223,17 @@
     <option name="version" value="3" />
   </component>
   <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="feat(API): созданы модели данных" />
@@ -227,13 +244,13 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Champ.Mock/Program.cs</url>
-          <line>38</line>
+          <line>35</line>
           <properties documentPath="$PROJECT_DIR$/Champ.Mock/Program.cs" initialLine="37" containingFunctionPresentation="">
             <startOffsets>
-              <option value="1318" />
+              <option value="1249" />
             </startOffsets>
             <endOffsets>
-              <option value="1351" />
+              <option value="1282" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="4" />

@@ -3,11 +3,11 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Champ.API.Models;
 
-public class ProcedureType {
+public class InsuranceCompany {
     [Key]
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-    public int ProcedureTypeId { get; set; } = 0;
+    public long InsuranceCompanyId { get; set; } = 0;
 
-    [MaxLength(50)]
-    public string ProcedureTypeName { get; set; } = string.Empty;
+    [MaxLength(255)]
+    public string Name { get; set; } = string.Empty;
 }

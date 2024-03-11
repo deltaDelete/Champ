@@ -7,19 +7,19 @@ namespace Champ.API.Models;
 public class Policy {
     [Key]
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-    public int PolicyId { get; set; } = 0;
+    public long PolicyId { get; set; } = 0;
 
-    public long PolicyNumber { get; set; }
-
-    [MaxLength(255)]
-    public string InsuranceCompany { get; set; } = string.Empty;
+    [ForeignKey(nameof(InsuranceCompany))]
+    public long InsuranceCompanyId { get; set; }
+    public InsuranceCompany? InsuranceCompany { get; set; }
 
     [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
-    [DefaultValue("CURRENT_DATE")]
+    [DefaultValue("CURRENT_TIMESTAMP")]
+    [Column(TypeName = "TIMESTAMP")]
     public DateTimeOffset ExpirationDate { get; set; }
 
     [ForeignKey(nameof(Patient))]
-    public int PatientId { get; set; }
+    public long PatientId { get; set; }
 
     public Patient? Patient { get; set; }
 }

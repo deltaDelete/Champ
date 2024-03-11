@@ -1,13 +1,14 @@
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace Champ.API.Models;
 
 public class Patient {
     [Key]
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-    public int PatientId { get; set; } = 0;
+    public long PatientId { get; set; } = 0;
 
     [Column(TypeName = "mediumblob")]
     public byte[] Photo { get; set; } = Array.Empty<byte>();
@@ -28,10 +29,7 @@ public class Patient {
     [Column(TypeName = "timestamp")]
     public DateTimeOffset DateOfBirth { get; set; }
 
-    [ForeignKey(nameof(Gender))]
     public int GenderId { get; set; }
-
-    public Gender? Gender { get; set; }
 
     [MaxLength(255)]
     public string Address { get; set; } = string.Empty;

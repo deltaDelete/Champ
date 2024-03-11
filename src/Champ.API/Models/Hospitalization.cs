@@ -8,24 +8,37 @@ namespace Champ.API.Models;
 public class Hospitalization {
     [Key]
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-    public int HospitalizationId { get; set; } = 0;
+    public long HospitalizationId { get; set; } = 0;
 
-    [ForeignKey(nameof(Patient))]
-    public int PatientId { get; set; } = 0;
+    [ForeignKey(nameof(MedCard))]
+    public long MedCardId { get; set; } = 0;
 
-    public Patient? Patient { get; set; }
+    public MedCard? MedCard { get; set; }
+
+    [ForeignKey(nameof(Diagnosis))]
+    public long DiagosisId { get; set; } = 0;
+
+    public Diagnosis? Diagnosis { get; set; }
+
+    [MaxLength(4096)]
+    public string Purpose { get; set; } = string.Empty;
+
+    public bool IsPaid { get; set; }
+    
+    [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
+    [DefaultValue("CURRENT_TIMESTAMP")]
+    [Column(TypeName = "timestamp")]
+    public DateTimeOffset DateStart { get; set; }
 
     [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
-    [DefaultValue("CURRENT_DATE")]
-    public DateTimeOffset AdmissionDate { get; set; }
+    [DefaultValue("CURRENT_TIMESTAMP")]
+    [Column(TypeName = "timestamp")]
+    public DateTimeOffset DateEnd { get; set; }
+    
+    [MaxLength(4096)]
+    public string? AdditionalInfo { get; set; }
 
-    [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
-    [DefaultValue("CURRENT_DATE")]
-    public DateTimeOffset DischargeDate { get; set; }
-
-    [MaxLength(255)]
-    public string Reason { get; set; } = string.Empty;
-
-    [Column(TypeName = "json")]
-    public string Additional { get; set; } = "{}";
+    public bool IsRejected { get; set; }
+    [MaxLength(4096)]
+    public string? RejectionReason { get; set; }
 }

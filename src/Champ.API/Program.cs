@@ -33,9 +33,5 @@ public static class Program {
         app.UseAuthorization();
 
         app.MapControllers();
-
-        app.MapGet("/",
-            (HttpContext context, IDbContextFactory<ApplicationContext> dbf) =>
-                Results.Ok(dbf.CreateDbContext().Genders.ToList()));
     }
 }

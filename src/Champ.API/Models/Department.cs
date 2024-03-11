@@ -3,11 +3,10 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Champ.API.Models;
 
-public class Gender {
+public class Department {
     [Key]
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-    public int GenderId { get; set; } = 0;
-
+    public long DepartmentId { get; set; } = 0;
     [MaxLength(255)]
-    public string Name { get; set; } = string.Empty;
+    public string DepartmentName { get; set; } = string.Empty;
 }

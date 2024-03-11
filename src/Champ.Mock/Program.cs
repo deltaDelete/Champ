@@ -17,12 +17,9 @@ var loggerFactory = LoggerFactory.Create(builder => builder.AddSimpleConsole());
 
 var context = new ApplicationContext(conf, loggerFactory.CreateLogger<DbContext>());
 
-
-var genders = context.Genders.Select(x => x.GenderId).ToList();
-
 var customInstantiator = new Faker<Patient>("ru")
     .CustomInstantiator(f => new Patient() {
-        GenderId = f.PickRandom(genders),
+        GenderId = f.PickRandom(1, 2),
         Address = f.Address.FullAddress(),
         DateOfBirth = f.Person.DateOfBirth,
         Email = f.Person.Email,

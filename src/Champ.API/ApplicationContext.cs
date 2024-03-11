@@ -8,26 +8,22 @@ public class ApplicationContext : DbContext {
 
     public string ConnectionString = string.Empty;
 
+    public DbSet<Department> Departments { get; set; } = null!;
     public DbSet<Diagnosis> Diagnoses { get; set; } = null!;
     public DbSet<Doctor> Doctors { get; set; } = null!;
-    public DbSet<Gender> Genders { get; set; } = null!;
+    public DbSet<InsuranceCompany> InsuranceCompanies { get; set; } = null!;
     public DbSet<Hospitalization> Hospitalizations { get; set; } = null!;
-    public DbSet<MedicalRecord> MedicalRecords { get; set; } = null!;
+    public DbSet<Measure> Measures { get; set; } = null!;
+    public DbSet<MeasureType> MeasureTypes { get; set; } = null!;
+    public DbSet<MedCard> MedCards { get; set; } = null!;
     public DbSet<Patient> Patients { get; set; } = null!;
-    public DbSet<Procedure> Procedures { get; set; } = null!;
     public DbSet<Policy> Policies { get; set; } = null!;
-    public DbSet<ProcedureType> ProcedureTypes { get; set; } = null!;
     public DbSet<Visit> Visits { get; set; } = null!;
 
     public ApplicationContext(IConfiguration configuration, ILogger<DbContext> logger) {
         _logger = logger;
-        ConnectionString = configuration.GetSection("Database").GetValue<string>("ConnectionString") ?? throw new Exception("Database.ConnectionString is empty or non existent");
-        Database.EnsureCreated();
-        Database.Migrate();
-    }
-
-    protected override void OnModelCreating(ModelBuilder modelBuilder) {
-        base.OnModelCreating(modelBuilder);
+        ConnectionString = configuration.GetSection("Database").GetValue<string>("ConnectionString") ??
+                           throw new Exception("Database.ConnectionString is empty or non existent");
     }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) {
