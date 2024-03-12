@@ -10,34 +10,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="72915fbf-73e4-4d91-9eac-54e35cbea70d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Champ.API/Controllers/PatientController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Champ.API/Models/Department.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Champ.API/Models/Measure.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Champ.API/Models/MeasureType.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Champ/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Champ/.idea/dataSources.local.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Champ.Front/src/components/input/IFormControl.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Champ.Front/src/components/input/NumberInput.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Champ.Front/src/components/input/Selector.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Champ.Front/src/components/input/TextInput.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Champ.Front/src/pages/QRCodePage.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Champ.Mock/TypeRegistrar.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Champ.Mock/appsettings.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Champ/.idea/dataSources/351db698-b21f-4b50-ba12-9924472c2730.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Champ/.idea/dataSources/351db698-b21f-4b50-ba12-9924472c2730.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Champ/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Champ/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Champ.API/ApplicationContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Champ.API/ApplicationContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Champ.API/Controllers/GenderController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Champ.API/Models/Diagnosis.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Champ.API/Models/Diagnosis.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Champ.API/Models/Doctor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Champ.API/Models/Doctor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Champ.API/Models/Gender.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Champ.API/Models/InsuranceCompany.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Champ.API/Models/Hospitalization.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Champ.API/Models/Hospitalization.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Champ.API/Models/MedicalRecord.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Champ.API/Models/MedCard.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Champ.API/Controllers/PatientController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Champ.API/Controllers/PatientController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Champ.API/Models/Patient.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Champ.API/Models/Patient.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Champ.API/Models/Policy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Champ.API/Models/Policy.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Champ.API/Models/Procedure.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Champ.API/Models/ProcedureType.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Champ.API/Models/Visit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Champ.API/Models/Visit.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Champ.API/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Champ.API/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Champ.API/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/Champ.API/appsettings.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Champ.Front/bun.lockb" beforeDir="false" afterPath="$PROJECT_DIR$/Champ.Front/bun.lockb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Champ.Front/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/Champ.Front/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Champ.Front/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/Champ.Front/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Champ.Front/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/Champ.Front/src/App.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Champ.Front/src/api/client.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Champ.Front/src/api/client.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Champ.Front/src/main.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/Champ.Front/src/main.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Champ.Front/src/models/Patient.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Champ.Front/src/models/Patient.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Champ.Front/src/pages/PatientRegister.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/Champ.Front/src/pages/PatientRegister.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Champ.Mock/Champ.Mock.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Champ.Mock/Champ.Mock.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Champ.Mock/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Champ.Mock/Program.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -45,25 +35,35 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ChangesViewManager">
+    <option name="groupingKeys">
+      <option value="directory" />
+    </option>
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="TypeScript JSX File" />
         <option value="CSS File" />
         <option value="TypeScript File" />
+        <option value="JSON File" />
+        <option value="TypeScript JSX File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/7e95027ae8024f17ba1a29fb35384e10252a00/cc/b9f3e8c3/Faker.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9536d547332d48b4a1fa6d344d253c3d7a00/fb/e3936fb2/IConfiguration.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/bd1669d1392f4ba6a95238492a7b3796ae3a00/8a/3ce5b10e/ExceptionDispatchInfo.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/ce31500defe742bd9cabe8e9ee7a87391fd5b0/16/9f3c47d5/DbContext.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/ce31500defe742bd9cabe8e9ee7a87391fd5b0/60/997ccf34/DbContextOptionsBuilder.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/206691a9c245ec1fe695c1a7ad4915d2fc23d6891ac74fad2c2a6d1a4e070/SpectreConsoleLoggerFormatter.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/b7ed4f51b060c6c76c2150b940b8cbd156343b2f49a527f784d5c16e6a42038/SpectreConsoleLoggerOptions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/c6875dcf585e32ee1078f87237f2fdf0994f49694d9d295174907064955328c/ModelType.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/fdd0283b73c6b27c4cc6059adbe7dd937dc4725c8256542f20457947af1b8/ServerSession.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///home/student/RiderProjects/Champ/src/Champ.API/Models/Policy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///home/student/RiderProjects/Champ/src/Champ.API/Models/Policy.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProblemsViewState">
@@ -96,7 +96,7 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_interpreter_path": "node",
     "nodejs_package_manager_path": "/home/delta/.local/bin/bun",
-    "npm.dev.executor": "Run",
+    "npm.dev.executor": "Debug",
     "prettierjs.PrettierConfiguration.Package": "/home/student/RiderProjects/Champ/src/Champ.Front/node_modules/prettier",
     "settings.editor.selected.configurable": "com.codeium.AppSettingsConfigurable",
     "ts.external.directory.path": "/home/student/RiderProjects/Champ/src/Champ.Front/node_modules/typescript/lib",
@@ -206,7 +206,9 @@
       <workItem from="1709890741632" duration="2842000" />
       <workItem from="1709915974528" duration="4681000" />
       <workItem from="1709920669046" duration="1328000" />
-      <workItem from="1710122374345" duration="14976000" />
+      <workItem from="1710122374345" duration="15444000" />
+      <workItem from="1710206007219" duration="9781000" />
+      <workItem from="1710219774992" duration="5248000" />
     </task>
     <task id="LOCAL-00001" summary="feat(API): созданы модели данных">
       <option name="closed" value="true" />
@@ -216,7 +218,23 @@
       <option name="project" value="LOCAL" />
       <updated>1709611916114</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="feat: изменена схема бд">
+      <option name="closed" value="true" />
+      <created>1710142281641</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1710142281641</updated>
+    </task>
+    <task id="LOCAL-00003" summary="chore: разделение кода">
+      <option name="closed" value="true" />
+      <created>1710142312882</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1710142312882</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -237,25 +255,12 @@
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="feat(API): созданы модели данных" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(API): созданы модели данных" />
+    <MESSAGE value="feat: изменена схема бд" />
+    <MESSAGE value="chore: разделение кода" />
+    <option name="LAST_COMMIT_MESSAGE" value="chore: разделение кода" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Champ.Mock/Program.cs</url>
-          <line>35</line>
-          <properties documentPath="$PROJECT_DIR$/Champ.Mock/Program.cs" initialLine="37" containingFunctionPresentation="">
-            <startOffsets>
-              <option value="1249" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1282" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-      </breakpoints>
       <default-breakpoints>
         <breakpoint enabled="true" type="DotNet Exception Breakpoints" />
       </default-breakpoints>

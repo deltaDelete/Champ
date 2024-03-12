@@ -41,4 +41,7 @@ public class Patient {
     [EmailAddress]
     [MaxLength(255)]
     public string Email { get; set; } = string.Empty;
+    
+    [JsonIgnore]
+    public ICollection<Policy> Policies { get; set; } = new List<Policy>();
 }
