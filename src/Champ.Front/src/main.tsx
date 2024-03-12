@@ -4,6 +4,7 @@ import App from "./App.tsx";
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import PatientRegister from "./pages/PatientRegister.tsx";
+import { loader as QRCodePageLoader, QRCodePage } from "@/pages/QRCodePage.tsx";
 
 const router = createBrowserRouter([{
     path: "/",
@@ -11,7 +12,15 @@ const router = createBrowserRouter([{
     children: [
         {
             path: "/",
-            element: <PatientRegister />
+            element: <PatientRegister />,
+            children: [
+                {
+                    // TODO: Проверить
+                    path: "/patient/:id/qrcode",
+                    element: <QRCodePage />,
+                    loader: QRCodePageLoader
+                }
+            ]
         }
     ]
 }]);

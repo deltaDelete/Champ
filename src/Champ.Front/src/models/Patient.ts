@@ -1,10 +1,8 @@
 import * as z from "zod";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { tuple, ZodString } from "zod";
 
 export type Patient = {
     patientId: number;
-    photo: string;
+    photo?: File;
     firstName: string;
     lastName: string;
     middleName: string;
