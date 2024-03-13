@@ -52,16 +52,15 @@ export default function PatientRegister() {
                     title: "Добавлен пациент",
                     description: <p className="break-all">{JSON.stringify(data)}</p>,
                 });
-                if (photo == null) {
-                    return;
-                }
-
-                await patientRepo.postFormField(photo, result.patientId, "photo");
                 return result;
             },
-        );
+        )
+            .then(async result => {
+                photo && await patientRepo.postFormField(photo, result.patientId, "photo");
+                return result;
+            });
         console.log(JSON.stringify(patient));
-        
+
     };
 
     const onInvalid: SubmitErrorHandler<Patient> = async (errors, event) => {
@@ -91,11 +90,21 @@ export default function PatientRegister() {
                     <Form {...form}>
                         <form className="flex flex-col gap-1" onSubmit={form.handleSubmit(onSubmit, onInvalid)}>
                             <TextInput control={form.control} name={"lastName"} placeholder={"Иванов"}
+                                       autoComplete="given"
                                        label={"Фамилия"} />
-                            <TextInput control={form.control} name={"firstName"} placeholder={"Иван"} label={"Имя"} />
-                            <TextInput control={form.control} name={"middleName"} placeholder={"Иванович"}
+                            <TextInput control={form.control}
+                                       autoComplete="family-name"
+                                       name={"firstName"}
+                                       placeholder={"Иван"}
+                                       label={"Имя"} />
+                            <TextInput control={form.control}
+                                       autoComplete="additional-name"
+                                       name={"middleName"}
+                                       placeholder={"Иванович"}
                                        label={"Отчество"} />
-                            <NumberInput control={form.control} name={"passportNumber"} placeholder={"1234 123456"}
+                            <NumberInput control={form.control}
+                                         name={"passportNumber"}
+                                         placeholder={"1234 123456"}
                                          ref={maskito}
                                          label={"Серия и номер паспорта"} />
                             <FormField
@@ -105,7 +114,9 @@ export default function PatientRegister() {
                                         <FormItem>
                                             <FormLabel>Дата рождения</FormLabel>
                                             <FormControl>
-                                                <Input placeholder="01.01.1980" type={"date"} {...field} />
+                                                <Input placeholder="01.01.1980"
+                                                       autoComplete="bday"
+                                                       type={"date"} {...field} />
                                             </FormControl>
                                             <FormMessage />
                                         </FormItem>
@@ -115,7 +126,7 @@ export default function PatientRegister() {
                                     <FormItem>
                                         <FormLabel>Адрес</FormLabel>
                                         <FormControl>
-                                            <Input placeholder="г. Абакан, ул. Пушкина, д. 1, кв. 1" {...field} />
+                                            <Input autoComplete="address" placeholder="г. Абакан, ул. Пушкина, д. 1, кв. 1" {...field} />
                                         </FormControl>
                                         <FormMessage />
                                     </FormItem>
@@ -125,27 +136,29 @@ export default function PatientRegister() {
                                     <FormItem>
                                         <FormLabel>Номер телефона</FormLabel>
                                         <FormControl>
-                                            <Input placeholder="+79123456789" {...field} />
+                                            <Input autoComplete="tel-national" placeholder="+79123456789" {...field} />
                                         </FormControl>
                                         <FormMessage />
                                     </FormItem>
                                 )} control={form.control} name="phoneNumber" />
                             <TextInput control={form.control} name={"email"} placeholder={"i.ivanov@mail.ru"}
+                                       autoComplete="email"
                                        label={"Электронная почта"} />
                             {/* @ts-ignore */}
                             <Selector collection={genders} keySelector={v => v.name.toString()}
+                                      autoComplete="sex"
                                       valueSelector={v => v.genderId.toString()} displayNameSelector={v => v.name}
                                       control={form.control} name={"genderId"} placeholder={"Выберите ваш пол"}
                                       label={"Пол"} />
 
                             {/* TODO: Поля: Номер страхового полиса, страховая компания */}
-                            
+
                             <FormItem>
                                 <FormLabel>Фото</FormLabel>
                                 <FormControl>
                                     <Input
                                         onChange={(e) =>
-                                            /*@ts-ignore*/    
+                                            /*@ts-ignore*/
                                             setPhoto(e.target.files[0])}
                                         type="file"
                                         multiple={false} />

@@ -24,6 +24,7 @@ public class PatientController : ControllerBase {
     }
 
     [HttpGet("{id:long}")]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
     public async Task<IActionResult> Get(long id) {
         var db = await _dbFactory.CreateDbContextAsync();
         var entity = await db.Patients.FindAsync(id);

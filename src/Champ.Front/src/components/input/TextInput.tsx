@@ -12,7 +12,7 @@ export function TextInput<TFieldValues extends FieldValues = FieldValues>(props:
                 <FormItem ref={props.ref}>
                     {props.label && <FormLabel>{props.label}</FormLabel>}
                     <FormControl>
-                        <Input placeholder={props.placeholder} {...field} />
+                        <Input autoComplete={props.autoComplete} placeholder={props.placeholder} {...field} />
                     </FormControl>
                     <FormMessage />
                 </FormItem>

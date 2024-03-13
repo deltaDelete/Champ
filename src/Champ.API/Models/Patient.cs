@@ -11,6 +11,7 @@ public class Patient {
     public long PatientId { get; set; } = 0;
 
     [Column(TypeName = "mediumblob")]
+    [JsonIgnore]
     public byte[] Photo { get; set; } = Array.Empty<byte>();
 
     [MaxLength(255)]

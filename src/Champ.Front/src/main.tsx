@@ -13,14 +13,11 @@ const router = createBrowserRouter([{
         {
             path: "/",
             element: <PatientRegister />,
-            children: [
-                {
-                    // TODO: Проверить
-                    path: "/patient/:id/qrcode",
-                    element: <QRCodePage />,
-                    loader: QRCodePageLoader
-                }
-            ]
+        },
+        {
+            path: "/patient/:id/qrcode",
+            element: <QRCodePage />,
+            loader: QRCodePageLoader
         }
     ]
 }]);

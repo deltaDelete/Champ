@@ -33,14 +33,15 @@ class GenericRepository<T> {
             .then(res => res && res.json());
     }
 
-    async postFormField<TValue extends string | File>(body: TValue, id: number, field: string): Promise<any> {
+    async postFormField<TValue extends string | Blob>(body: TValue, id: number, field: string): Promise<any> {
         const headers = new Headers();
         headers.append("Content-Type", "multipart/form-data");
         let formData;
         
-        // todo где то что то не отправляется - плохо
-        if (body instanceof File) {
-            formData = await body.formData();
+        if (body instanceof Blob) {
+            // todo найти верный способ отправлять файлы
+            formData = new FormData();
+            formData.append(field, body.name);
         }
         
         if (body instanceof String) {
