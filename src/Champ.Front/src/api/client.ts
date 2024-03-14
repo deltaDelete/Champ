@@ -35,20 +35,15 @@ class GenericRepository<T> {
 
     async postFormField<TValue extends string | Blob>(body: TValue, id: number, field: string): Promise<any> {
         const headers = new Headers();
-        headers.append("Content-Type", "multipart/form-data");
-        let formData;
-        
+        let formData = new FormData();
+
         if (body instanceof Blob) {
-            // todo найти верный способ отправлять файлы
-            formData = new FormData();
-            formData.append(field, body.name);
-        }
-        
-        if (body instanceof String) {
-            formData = new FormData();
+            formData.append(field, body, body.name);
+        } else {
             formData.append(field, body);
         }
-        
+
+
         return fetch(`/api/${this.subroute}/${id}/${field}`, {
             method: "POST",
             body: formData,

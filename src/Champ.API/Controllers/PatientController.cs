@@ -105,8 +105,8 @@ public class PatientController : ControllerBase {
     }
 
     [HttpPost("{id:long}/photo")]
-    public async Task<IActionResult> PostPhoto([FromForm] IFormFile file, long id, CancellationToken ct) {
-        if (file.ContentType == "image/jpeg") {
+    public async Task<IActionResult> PostPhoto([FromForm(Name =  "photo")] IFormFile file, long id, CancellationToken ct) {
+        if (file.ContentType != "image/jpeg") {
             return BadRequest("Только изображения jpg/jpeg");
         }
         if (file.Length > 16777216L) {
