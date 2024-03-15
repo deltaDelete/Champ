@@ -19,7 +19,7 @@
         </introspection-scope>
       </schema-mapping>
       <ssh-properties>
-        <enabled>true</enabled>
+        <enabled>false</enabled>
         <ssh-config-id>3a63cce8-d438-48c6-ae8e-389e4b2dde69</ssh-config-id>
         <local-port>3306</local-port>
       </ssh-properties>

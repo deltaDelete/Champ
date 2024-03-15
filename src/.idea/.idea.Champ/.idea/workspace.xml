@@ -10,19 +10,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="72915fbf-73e4-4d91-9eac-54e35cbea70d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Champ.Front/src/utils/RouterUtils.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Champ.API/Controllers/InsuranceCompanyController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Champ.API/Migrations/20240315012959_OccupationAdd.Designer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Champ.API/Migrations/20240315012959_OccupationAdd.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Champ.API/Migrations/20240315014406_MeasurePriceAdd.Designer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Champ.API/Migrations/20240315014406_MeasurePriceAdd.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Champ.API/Migrations/20240315015817_DepartmentToHospitalization.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Champ.API/Migrations/20240315020359_NullablePolicyExpirationDate.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Champ/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Champ/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Champ/.idea/dataSources/351db698-b21f-4b50-ba12-9924472c2730.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Champ/.idea/dataSources/351db698-b21f-4b50-ba12-9924472c2730.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Champ/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Champ/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Champ.API/Controllers/PatientController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Champ.API/Controllers/PatientController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Champ.API/Migrations/ApplicationContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Champ.API/Migrations/ApplicationContextModelSnapshot.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Champ.API/Models/Hospitalization.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Champ.API/Models/Hospitalization.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Champ.API/Models/Measure.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Champ.API/Models/Measure.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Champ.API/Models/MedCard.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Champ.API/Models/MedCard.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Champ.API/Models/Patient.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Champ.API/Models/Patient.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Champ.API/Models/Policy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Champ.API/Models/Policy.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Champ.Front/bun.lockb" beforeDir="false" afterPath="$PROJECT_DIR$/Champ.Front/bun.lockb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Champ.Front/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/Champ.Front/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Champ.Front/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/Champ.Front/src/App.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Champ.Front/src/api/client.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Champ.Front/src/api/client.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Champ.Front/src/components/input/IFormControl.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/Champ.Front/src/components/input/IFormControl.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Champ.Front/src/components/input/TextInput.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/Champ.Front/src/components/input/TextInput.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Champ.Front/src/main.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/Champ.Front/src/main.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Champ.Front/src/components/input/NumberInput.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/Champ.Front/src/components/input/NumberInput.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Champ.Front/src/components/input/Selector.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/Champ.Front/src/components/input/Selector.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Champ.Front/src/models/Patient.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Champ.Front/src/models/Patient.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Champ.Front/src/pages/PatientRegister.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/Champ.Front/src/pages/PatientRegister.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Champ.Front/src/pages/QRCodePage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/Champ.Front/src/pages/QRCodePage.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,8 +52,8 @@
       <list>
         <option value="CSS File" />
         <option value="JSON File" />
-        <option value="TypeScript JSX File" />
         <option value="TypeScript File" />
+        <option value="TypeScript JSX File" />
       </list>
     </option>
   </component>
@@ -59,7 +72,6 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/c6875dcf585e32ee1078f87237f2fdf0994f49694d9d295174907064955328c/ModelType.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/fdd0283b73c6b27c4cc6059adbe7dd937dc4725c8256542f20457947af1b8/ServerSession.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///home/student/RiderProjects/Champ/src/Champ.API/Controllers/PatientController.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///home/student/RiderProjects/Champ/src/Champ.API/Models/Patient.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProblemsViewState">
@@ -205,7 +217,8 @@
       <workItem from="1710122374345" duration="15444000" />
       <workItem from="1710206007219" duration="9781000" />
       <workItem from="1710219774992" duration="5493000" />
-      <workItem from="1710307267046" duration="4062000" />
+      <workItem from="1710307267046" duration="4318000" />
+      <workItem from="1710464558409" duration="15727000" />
     </task>
     <task id="LOCAL-00001" summary="feat(API): созданы модели данных">
       <option name="closed" value="true" />
@@ -255,7 +268,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710225243890</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="feat: генерация qr кодов">
+      <option name="closed" value="true" />
+      <created>1710311521632</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1710311521632</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -281,7 +302,8 @@
     <MESSAGE value="feat: добавлена загрузка фото" />
     <MESSAGE value="WIP: фото, qrcode" />
     <MESSAGE value="feat: генерация мед.карт и полисов" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: генерация мед.карт и полисов" />
+    <MESSAGE value="feat: генерация qr кодов" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: генерация qr кодов" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -294,9 +316,21 @@
         </breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/Champ.Front/src/api/client.ts</url>
-          <line>36</line>
-          <properties lambdaOrdinal="-1" />
+          <line>39</line>
           <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Champ.API/Controllers/PatientController.cs</url>
+          <line>78</line>
+          <properties documentPath="$PROJECT_DIR$/Champ.API/Controllers/PatientController.cs" initialLine="78" containingFunctionPresentation="Method 'Post'">
+            <startOffsets>
+              <option value="2375" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2424" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
