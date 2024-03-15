@@ -3,6 +3,7 @@ using System;
 using Champ.API;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Champ.API.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    partial class ApplicationContextModelSnapshot : ModelSnapshot
+    [Migration("20240315014406_MeasurePriceAdd")]
+    partial class MeasurePriceAdd
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -96,9 +99,6 @@ namespace Champ.API.Migrations
                         .ValueGeneratedOnAddOrUpdate()
                         .HasColumnType("timestamp");
 
-                    b.Property<long>("DepartmentId")
-                        .HasColumnType("bigint");
-
                     b.Property<long>("DiagosisId")
                         .HasColumnType("bigint");
 
@@ -121,8 +121,6 @@ namespace Champ.API.Migrations
                         .HasColumnType("varchar(4096)");
 
                     b.HasKey("HospitalizationId");
-
-                    b.HasIndex("DepartmentId");
 
                     b.HasIndex("DiagosisId");
 
@@ -173,7 +171,7 @@ namespace Champ.API.Migrations
 
                     b.Property<decimal>("Price")
                         .HasPrecision(10, 2)
-                        .HasColumnType("decimal(10,2)");
+                        .HasColumnType("decimal(10, 2)");
 
                     b.Property<string>("Recommendations")
                         .IsRequired()
@@ -297,7 +295,8 @@ namespace Champ.API.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bigint");
 
-                    b.Property<DateTimeOffset?>("ExpirationDate")
+                    b.Property<DateTimeOffset>("ExpirationDate")
+                        .ValueGeneratedOnAddOrUpdate()
                         .HasColumnType("TIMESTAMP");
 
                     b.Property<long>("InsuranceCompanyId")
@@ -337,12 +336,6 @@ namespace Champ.API.Migrations
 
             modelBuilder.Entity("Champ.API.Models.Hospitalization", b =>
                 {
-                    b.HasOne("Champ.API.Models.Department", "Department")
-                        .WithMany()
-                        .HasForeignKey("DepartmentId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("Champ.API.Models.Diagnosis", "Diagnosis")
                         .WithMany()
                         .HasForeignKey("DiagosisId")
@@ -354,8 +347,6 @@ namespace Champ.API.Migrations
                         .HasForeignKey("MedCardId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("Department");
 
                     b.Navigation("Diagnosis");
 

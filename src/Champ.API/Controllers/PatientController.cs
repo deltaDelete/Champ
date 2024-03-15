@@ -2,6 +2,7 @@ using System.Net.Mime;
 using Champ.API.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
 
 namespace Champ.API.Controllers;
 
@@ -74,6 +75,54 @@ public class PatientController : ControllerBase {
         return Ok(entity);
     }
 
+    [HttpPost("register")]
+    public async Task<IActionResult> Post([FromBody] PatientRegister register, CancellationToken ct) {
+        var db = await _dbFactory.CreateDbContextAsync(ct);
+
+        var entity = register.Patient;
+
+        entity.PatientId = 0;
+
+        _ = await db.Patients.AddAsync(entity, ct);
+        await db.SaveChangesAsync(ct);
+
+        var medCard = new MedCard() {
+            PatientId = entity.PatientId,
+        };
+
+        _ = await db.MedCards.AddAsync(medCard, ct);
+        await db.SaveChangesAsync(ct);
+
+        _logger.LogDebug("Created Patient with {}", entity.PatientId);
+        _logger.LogDebug("Created MedCard with Id={MedCardId}, PatientId={PatientId}, Date={DateOfIssue}",
+            medCard.MedCardId,
+            medCard.PatientId,
+            medCard.DateOfIssue
+        );
+
+        var policy = register.Policy;
+        var policyInDb = await db.Policies.FindAsync(new object?[] { policy.PolicyId }, cancellationToken: ct);
+        if (policyInDb is not null) {
+            return BadRequest("Пациент с этим полисом уже существует");
+        }
+
+        policy.PatientId = entity.PatientId;
+         _ = await db.Policies.AddAsync(register.Policy, ct);
+
+        await db.SaveChangesAsync(ct);
+
+        _logger.LogDebug(
+            "Created Policy with PolicyId={PolicyId}, PatientId={PatientId}, InsuranceCompanyId={InsuranceCompanyId}",
+            policy.PolicyId, policy.PatientId, policy.InsuranceCompanyId);
+
+        return Ok(entity);
+    }
+
+    public class PatientRegister {
+        public Patient Patient { get; set; }
+        public Policy Policy { get; set; }
+    }
+
     [HttpPut("{id:long}")]
     public async Task<IActionResult> Put([FromBody] Patient entity, long id) {
         var db = await _dbFactory.CreateDbContextAsync();
@@ -91,7 +140,7 @@ public class PatientController : ControllerBase {
         var db = await _dbFactory.CreateDbContextAsync(ct);
         var exists = await db.Patients.Include(x => x.Policies)
             .FirstOrDefaultAsync(x => x.PatientId == id, ct);
-        
+
         if (exists is null) {
             return BadRequest();
         }
@@ -109,13 +158,14 @@ public class PatientController : ControllerBase {
         if (file.ContentType == "image/jpeg") {
             return BadRequest("Только изображения jpg/jpeg");
         }
+
         if (file.Length > 16777216L) {
             return BadRequest("Файл больше 16MB");
         }
-        
+
         var db = await _dbFactory.CreateDbContextAsync(ct);
         var exists = await db.Patients.FindAsync(new object?[] { id }, cancellationToken: ct);
-        
+
         if (exists is null) {
             return NotFound(id);
         }
@@ -127,6 +177,12 @@ public class PatientController : ControllerBase {
 
         await db.SaveChangesAsync(ct);
         _logger.LogDebug("Photo was uploaded for Patient {}", exists.PatientId);
+
+        var medCard = await db.MedCards.FirstOrDefaultAsync(x => x.PatientId == id, cancellationToken: ct);
+        if (medCard is not null) {
+            medCard.Photo = exists.Photo;
+        }
+
         return Ok();
     }
 
@@ -145,7 +201,7 @@ public class PatientController : ControllerBase {
         };
         Response.Headers.Add("Content-Disposition", cd.ToString());
         Response.Headers.Add("X-Content-Type-Options", "nosniff");
-        
+
         return File(exists.Photo, "image/jpeg");
     }
 }

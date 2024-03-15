@@ -41,4 +41,9 @@ public class Hospitalization {
     public bool IsRejected { get; set; }
     [MaxLength(4096)]
     public string? RejectionReason { get; set; }
+
+    [ForeignKey(nameof(Department))]
+    public long DepartmentId { get; set; }
+
+    public Department? Department { get; set; }
 }
