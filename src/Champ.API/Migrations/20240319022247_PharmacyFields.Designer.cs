@@ -3,16 +3,19 @@ using System;
 using Champ.API;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
-namespace Champ.API.Migrations
+namespace Champ.API._1
 {
     [DbContext(typeof(ApplicationContext))]
-    partial class ApplicationContextModelSnapshot : ModelSnapshot
+    [Migration("20240319022247_PharmacyFields")]
+    partial class PharmacyFields
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -140,10 +143,12 @@ namespace Champ.API.Migrations
                         .HasColumnType("varchar(4096)");
 
                     b.Property<DateTimeOffset>("DateEnd")
-                        .HasColumnType("TIMESTAMP");
+                        .ValueGeneratedOnAddOrUpdate()
+                        .HasColumnType("timestamp");
 
                     b.Property<DateTimeOffset>("DateStart")
-                        .HasColumnType("TIMESTAMP");
+                        .ValueGeneratedOnAddOrUpdate()
+                        .HasColumnType("timestamp");
 
                     b.Property<long>("DepartmentId")
                         .HasColumnType("bigint");
@@ -206,6 +211,7 @@ namespace Champ.API.Migrations
                         .HasColumnType("bigint");
 
                     b.Property<DateTimeOffset>("MeasureDate")
+                        .ValueGeneratedOnAddOrUpdate()
                         .HasColumnType("TIMESTAMP");
 
                     b.Property<string>("MeasureName")
@@ -294,7 +300,8 @@ namespace Champ.API.Migrations
                         .HasColumnType("varchar(255)");
 
                     b.Property<DateTimeOffset>("DateOfBirth")
-                        .HasColumnType("TIMESTAMP");
+                        .ValueGeneratedOnAddOrUpdate()
+                        .HasColumnType("timestamp");
 
                     b.Property<string>("Email")
                         .IsRequired()

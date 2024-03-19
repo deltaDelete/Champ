@@ -59,7 +59,8 @@ class GenerateCommand : Command<GenerateCommand.Settings> {
 
     public enum ModelType {
         Patient,
-        Policy
+        Policy,
+        DrugStock
     }
 
     public GenerateCommand(ApplicationContext context, ILogger<GenerateCommand> logger) {
@@ -78,6 +79,7 @@ class GenerateCommand : Command<GenerateCommand.Settings> {
         return (settings.ModelType switch {
             ModelType.Patient => ExecutePatientAsync(context, settings),
             ModelType.Policy => ExecutePolicyAsync(context, settings),
+            ModelType.DrugStock => ExecuteDrugStocksAsync(context, settings),
             _ => throw new ArgumentException("")
         }).ConfigureAwait(false).GetAwaiter().GetResult();
     }
@@ -130,6 +132,30 @@ class GenerateCommand : Command<GenerateCommand.Settings> {
         await _context.Policies.AddRangeAsync(policies);
         await _context.SaveChangesAsync();
         _logger.LogInformation("Successfully generated {} Policies", settings.Amount);
+        return 0;
+    }
+
+    public async Task<int> ExecuteDrugStocksAsync(CommandContext cmdContext, Settings settings)
+    {
+        _logger.LogInformation("Starting DrugStocks data generation");
+        var drugs = _context.Drugs.Select(p => p.DrugId).Take(100).ToList();
+        var warehouses = _context.Warehouses.Select(p => p.WarehouseId).ToList();
+        
+        var customInstantiate = new Faker<DrugStock>("ru")
+            .CustomInstantiator(f => new DrugStock() {
+                DrugId = f.PickRandom(drugs),
+                WarehouseId = f.PickRandom(warehouses),
+                Quantity = f.Random.Int(1, 100),
+                ReceiptDate = f.Date.Past(),
+                ExpirationDate = f.Date.Future()
+            });
+        
+        
+        var drugStocks = customInstantiate.GenerateLazy(settings.Amount);
+
+        await _context.DrugStocks.AddRangeAsync(drugStocks);
+        await _context.SaveChangesAsync();
+        _logger.LogInformation("Successfully generated {} DrugStocks", settings.Amount);
         return 0;
     }
 

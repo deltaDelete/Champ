@@ -3,6 +3,7 @@ using System;
 using Champ.API;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Champ.API.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    partial class ApplicationContextModelSnapshot : ModelSnapshot
+    [Migration("20240319032012_DateTimeOffset.RemoveDefaultValueAttribute")]
+    partial class DateTimeOffsetRemoveDefaultValueAttribute
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -109,13 +112,15 @@ namespace Champ.API.Migrations
                         .HasColumnType("bigint");
 
                     b.Property<DateTimeOffset>("ExpirationDate")
-                        .HasColumnType("datetime(6)");
+                        .HasColumnType("datetime(6)")
+                        .HasDefaultValue("CURRENT_TIMESTAMP");
 
                     b.Property<int>("Quantity")
                         .HasColumnType("int");
 
                     b.Property<DateTimeOffset>("ReceiptDate")
-                        .HasColumnType("datetime(6)");
+                        .HasColumnType("datetime(6)")
+                        .HasDefaultValue("CURRENT_TIMESTAMP");
 
                     b.Property<long>("WarehouseId")
                         .HasColumnType("bigint");
@@ -140,10 +145,12 @@ namespace Champ.API.Migrations
                         .HasColumnType("varchar(4096)");
 
                     b.Property<DateTimeOffset>("DateEnd")
-                        .HasColumnType("TIMESTAMP");
+                        .HasColumnType("TIMESTAMP")
+                        .HasDefaultValue("CURRENT_TIMESTAMP");
 
                     b.Property<DateTimeOffset>("DateStart")
-                        .HasColumnType("TIMESTAMP");
+                        .HasColumnType("TIMESTAMP")
+                        .HasDefaultValue("CURRENT_TIMESTAMP");
 
                     b.Property<long>("DepartmentId")
                         .HasColumnType("bigint");
@@ -206,7 +213,8 @@ namespace Champ.API.Migrations
                         .HasColumnType("bigint");
 
                     b.Property<DateTimeOffset>("MeasureDate")
-                        .HasColumnType("TIMESTAMP");
+                        .HasColumnType("TIMESTAMP")
+                        .HasDefaultValue("CURRENT_TIMESTAMP");
 
                     b.Property<string>("MeasureName")
                         .IsRequired()
@@ -267,7 +275,8 @@ namespace Champ.API.Migrations
                         .HasColumnType("bigint");
 
                     b.Property<DateTimeOffset>("DateOfIssue")
-                        .HasColumnType("datetime(6)");
+                        .HasColumnType("datetime(6)")
+                        .HasDefaultValue("CURRENT_TIMESTAMP");
 
                     b.Property<long>("PatientId")
                         .HasColumnType("bigint");
@@ -294,7 +303,8 @@ namespace Champ.API.Migrations
                         .HasColumnType("varchar(255)");
 
                     b.Property<DateTimeOffset>("DateOfBirth")
-                        .HasColumnType("TIMESTAMP");
+                        .HasColumnType("TIMESTAMP")
+                        .HasDefaultValue("CURRENT_TIMESTAMP");
 
                     b.Property<string>("Email")
                         .IsRequired()
@@ -348,7 +358,8 @@ namespace Champ.API.Migrations
                         .HasColumnType("bigint");
 
                     b.Property<DateTimeOffset?>("ExpirationDate")
-                        .HasColumnType("TIMESTAMP");
+                        .HasColumnType("TIMESTAMP")
+                        .HasDefaultValue("CURRENT_TIMESTAMP");
 
                     b.Property<long>("InsuranceCompanyId")
                         .HasColumnType("bigint");
@@ -372,8 +383,9 @@ namespace Champ.API.Migrations
                         .HasColumnType("int");
 
                     b.Property<DateTimeOffset>("Date")
-                        .ValueGeneratedOnAddOrUpdate()
-                        .HasColumnType("datetime(6)");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime(6)")
+                        .HasDefaultValue("CURRENT_TIMESTAMP");
 
                     b.Property<long>("PatientId")
                         .HasColumnType("bigint");

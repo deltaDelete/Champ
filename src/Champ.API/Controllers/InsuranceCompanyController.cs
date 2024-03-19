@@ -1,3 +1,4 @@
+using Champ.API.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -11,9 +12,9 @@ public class InsuranceCompanyController : ControllerBase {
     public InsuranceCompanyController(IDbContextFactory<ApplicationContext> dbFactory) {
         _dbFactory = dbFactory;
     }
-    
+
     [HttpGet]
-    public async Task<IActionResult> GetAll() {
+    public async Task<ActionResult<IEnumerable<InsuranceCompany>>> GetAll() {
         var db = await _dbFactory.CreateDbContextAsync();
         var entities = await db.InsuranceCompanies.ToListAsync();
         return Ok(entities);
@@ -21,7 +22,7 @@ public class InsuranceCompanyController : ControllerBase {
 
     [HttpGet("{id:long}")]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
-    public async Task<IActionResult> Get(long id) {
+    public async Task<ActionResult<InsuranceCompany>> Get(long id) {
         var db = await _dbFactory.CreateDbContextAsync();
         var entity = await db.InsuranceCompanies.FindAsync(id);
         if (entity is null) {

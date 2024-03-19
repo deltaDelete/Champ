@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="champ@localhost" uuid="351db698-b21f-4b50-ba12-9924472c2730">
+    <data-source source="LOCAL" name="champ@0.tcp.eu.ngrok.io" uuid="351db698-b21f-4b50-ba12-9924472c2730">
       <driver-ref>mysql.8</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://localhost:3306/champ</jdbc-url>
+      <jdbc-url>jdbc:mysql://0.tcp.eu.ngrok.io:10801/champ</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
   </component>

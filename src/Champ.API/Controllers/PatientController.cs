@@ -18,15 +18,15 @@ public class PatientController : ControllerBase {
     }
 
     [HttpGet]
-    public async Task<IActionResult> GetAll() {
+    public async Task<ActionResult<IEnumerable<Patient>>> GetAll() {
         var db = await _dbFactory.CreateDbContextAsync();
         var entities = await db.Patients.ToListAsync();
         return Ok(entities);
     }
 
     [HttpGet("{id:long}")]
-    [ProducesResponseType(StatusCodes.Status404NotFound)]
-    public async Task<IActionResult> Get(long id) {
+    [ProducesResponseType(typeof(NotFoundObjectResult), 404)]
+    public async Task<ActionResult<Patient>> Get(long id) {
         var db = await _dbFactory.CreateDbContextAsync();
         var entity = await db.Patients.FindAsync(id);
         if (entity is null) {
@@ -37,7 +37,8 @@ public class PatientController : ControllerBase {
     }
 
     [HttpDelete("{id:long}")]
-    public async Task<IActionResult> Delete(long id) {
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
+    public async Task<ActionResult<Patient>> Delete(long id) {
         var db = await _dbFactory.CreateDbContextAsync();
         var entity = await db.Patients.FindAsync(id);
         if (entity is null) {
@@ -51,7 +52,7 @@ public class PatientController : ControllerBase {
     }
 
     [HttpPost]
-    public async Task<IActionResult> Post([FromBody] Patient entity) {
+    public async Task<ActionResult<Patient>> Post([FromBody] Patient entity) {
         var db = await _dbFactory.CreateDbContextAsync();
 
         entity.PatientId = 0;
@@ -76,7 +77,7 @@ public class PatientController : ControllerBase {
     }
 
     [HttpPost("register")]
-    public async Task<IActionResult> Post([FromBody] PatientRegister register, CancellationToken ct) {
+    public async Task<ActionResult<Patient>> Post([FromBody] PatientRegister register, CancellationToken ct) {
         var db = await _dbFactory.CreateDbContextAsync(ct);
 
         var entity = register.Patient;
@@ -124,7 +125,7 @@ public class PatientController : ControllerBase {
     }
 
     [HttpPut("{id:long}")]
-    public async Task<IActionResult> Put([FromBody] Patient entity, long id) {
+    public async Task<ActionResult<Patient>> Put([FromBody] Patient entity, long id) {
         var db = await _dbFactory.CreateDbContextAsync();
         if (entity.PatientId != id) {
             entity.PatientId = id;
@@ -136,7 +137,7 @@ public class PatientController : ControllerBase {
     }
 
     [HttpPost("{id:long}/policy")]
-    public async Task<IActionResult> PostPolicy([FromBody] Policy entity, long id, CancellationToken ct) {
+    public async Task<ActionResult<Policy>> PostPolicy([FromBody] Policy entity, long id, CancellationToken ct) {
         var db = await _dbFactory.CreateDbContextAsync(ct);
         var exists = await db.Patients.Include(x => x.Policies)
             .FirstOrDefaultAsync(x => x.PatientId == id, ct);
@@ -187,7 +188,9 @@ public class PatientController : ControllerBase {
     }
 
     [HttpGet("{id:long}/photo")]
-    public async Task<IActionResult> GetPhoto([FromRoute] long id, CancellationToken ct) {
+    [ProducesResponseType(typeof(FileContentResult), 200)]
+    [ProducesResponseType(typeof(NotFoundObjectResult), 404)]
+    public async Task<ActionResult> GetPhoto([FromRoute] long id, CancellationToken ct) {
         var db = await _dbFactory.CreateDbContextAsync(ct);
         var exists = await db.Patients.FindAsync(new object?[] { id }, cancellationToken: ct);
         if (exists is null) {
@@ -201,7 +204,6 @@ public class PatientController : ControllerBase {
         };
         Response.Headers.Add("Content-Disposition", cd.ToString());
         Response.Headers.Add("X-Content-Type-Options", "nosniff");
-
         return File(exists.Photo, "image/jpeg");
     }
 }

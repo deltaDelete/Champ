@@ -15,10 +15,8 @@ public class Measure {
     public long MedCardId { get; set; } = 0;
     public MedCard? MedCard { get; set; }
 
-    [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
-    [DefaultValue("CURRENT_TIMESTAMP")]
     [Column(TypeName = "TIMESTAMP")]
-    public DateTimeOffset MeasureDate { get; set; }
+    public DateTimeOffset MeasureDate { get; set; } = DateTimeOffset.Now;
 
     [ForeignKey(nameof(Doctor))]
     public long DoctorId { get; set; }

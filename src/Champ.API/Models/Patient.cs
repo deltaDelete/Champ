@@ -24,11 +24,9 @@ public class Patient {
     public string MiddleName { get; set; } = string.Empty;
 
     public long PassportNumber { get; set; } = 0;
-
-    [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
-    [DefaultValue("CURRENT_TIMESTAMP")]
-    [Column(TypeName = "timestamp")]
-    public DateTimeOffset DateOfBirth { get; set; }
+    
+    [Column(TypeName = "TIMESTAMP")]
+    public DateTimeOffset DateOfBirth { get; set; } = DateTimeOffset.Now;
 
     public int GenderId { get; set; }
 
