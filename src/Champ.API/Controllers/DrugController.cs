@@ -23,6 +23,9 @@ public class DrugController : ControllerBase {
         [FromQuery] int take = 100,
         [FromQuery] int skip = 0
     ) {
+        if (take < 0 || skip < 0) {
+            return BadRequest();
+        }
         _logger.LogInformation("Getting some drugs take={take} and skip={skip}", take, skip);
         var db = await _dbContextFactory.CreateDbContextAsync(ct);
         var list = await db.Drugs.Skip(skip).Take(take).ToListAsync(cancellationToken: ct);

@@ -17,12 +17,15 @@ public abstract class CrudController<TKey, TValue> : ControllerBase where TValue
     [HttpGet]
     [ProducesResponseType(StatusCodes.Status200OK)]
     public async Task<ActionResult<IEnumerable<TValue>>> GetAll(
-        [FromQuery] int take,
-        [FromQuery] int skip,
-        CancellationToken ct
+        CancellationToken ct,
+        [FromQuery] int take = 100,
+        [FromQuery] int skip = 0
     ) {
+        if (take < 0 || skip < 0) {
+            return BadRequest();
+        }
         var db = await _dbFactory.CreateDbContextAsync(ct);
-        var entities = await db.Set<TValue>().ToListAsync(cancellationToken: ct);
+        var entities = await db.Set<TValue>().Skip(skip).Take(take).ToListAsync(cancellationToken: ct);
         return Ok(entities);
     }
 
