@@ -12,7 +12,7 @@ public class Policy {
 
     [ForeignKey(nameof(InsuranceCompany))]
     public long InsuranceCompanyId { get; set; } = 0;
-    
+
     [JsonIgnore]
     public InsuranceCompany? InsuranceCompany { get; set; }
 

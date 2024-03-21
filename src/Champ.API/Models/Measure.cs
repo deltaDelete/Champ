@@ -10,9 +10,10 @@ public class Measure {
     [Key]
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public long MeasureId { get; set; } = 0;
-    
+
     [ForeignKey(nameof(MedCard))]
     public long MedCardId { get; set; } = 0;
+
     public MedCard? MedCard { get; set; }
 
     [Column(TypeName = "TIMESTAMP")]
@@ -20,10 +21,12 @@ public class Measure {
 
     [ForeignKey(nameof(Doctor))]
     public long DoctorId { get; set; }
+
     public Doctor? Doctor { get; set; }
 
     [ForeignKey(nameof(MeasureType))]
     public long MeasureTypeId { get; set; }
+
     public MeasureType? MeasureType { get; set; }
 
     [MaxLength(255)]

@@ -24,7 +24,7 @@ public class Patient {
     public string MiddleName { get; set; } = string.Empty;
 
     public long PassportNumber { get; set; } = 0;
-    
+
     [Column(TypeName = "TIMESTAMP")]
     public DateTimeOffset DateOfBirth { get; set; } = DateTimeOffset.Now;
 
@@ -43,7 +43,7 @@ public class Patient {
 
     [MaxLength(255)]
     public string Occupation { get; set; } = string.Empty;
-    
+
     [JsonIgnore]
     public ICollection<Policy> Policies { get; set; } = new List<Policy>();
 }

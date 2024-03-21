@@ -14,17 +14,18 @@ public class InsuranceCompanyController : ControllerBase {
     }
 
     [HttpGet]
-    public async Task<ActionResult<IEnumerable<InsuranceCompany>>> GetAll() {
-        var db = await _dbFactory.CreateDbContextAsync();
-        var entities = await db.InsuranceCompanies.ToListAsync();
+    public async Task<ActionResult<IEnumerable<InsuranceCompany>>> GetAll(CancellationToken ct) {
+        var db = await _dbFactory.CreateDbContextAsync(ct);
+        var entities = await db.InsuranceCompanies.ToListAsync(cancellationToken: ct);
         return Ok(entities);
     }
 
     [HttpGet("{id:long}")]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
-    public async Task<ActionResult<InsuranceCompany>> Get(long id) {
-        var db = await _dbFactory.CreateDbContextAsync();
-        var entity = await db.InsuranceCompanies.FindAsync(id);
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    public async Task<ActionResult<InsuranceCompany>> Get(long id, CancellationToken ct) {
+        var db = await _dbFactory.CreateDbContextAsync(ct);
+        var entity = await db.InsuranceCompanies.FindAsync(new object?[] { id }, cancellationToken: ct);
         if (entity is null) {
             return NotFound();
         }

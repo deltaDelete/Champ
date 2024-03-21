@@ -4,8 +4,7 @@ using Newtonsoft.Json;
 
 namespace Champ.API.Models;
 
-public class Warehouse
-{
+public class Warehouse {
     [Key]
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public long WarehouseId { get; set; } = 0;

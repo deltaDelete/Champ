@@ -10,33 +10,37 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="72915fbf-73e4-4d91-9eac-54e35cbea70d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Champ.API/Controllers/DrugController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Champ.API/Migrations/20240319014124_AddPharmacy.Designer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Champ.API/Migrations/20240319014124_AddPharmacy.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Champ.API/Migrations/20240319022247_PharmacyFields.Designer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Champ.API/Migrations/20240319022247_PharmacyFields.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Champ.API/Migrations/20240319032012_DateTimeOffset.RemoveDefaultValueAttribute.Designer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Champ.API/Migrations/20240319032012_DateTimeOffset.RemoveDefaultValueAttribute.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Champ.API/Models/Drug.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Champ.API/Models/DrugStock.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Champ.API/Models/Dto/DrugAvailability.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Champ.API/Models/Warehouse.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Champ.API/Utils/IgnorePropertiesResolver.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Champ.API/Controllers/CrudController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Champ.API/Models/Dto/WarehouseDto.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Champ/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Champ/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Champ/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Champ/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Champ/.idea/dataSources/351db698-b21f-4b50-ba12-9924472c2730.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Champ/.idea/dataSources/351db698-b21f-4b50-ba12-9924472c2730.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Champ/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Champ/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Champ.API/ApplicationContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Champ.API/ApplicationContext.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Champ.API/Champ.API.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Champ.API/Champ.API.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Champ.API/Controllers/DrugController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Champ.API/Controllers/DrugController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Champ.API/Controllers/InsuranceCompanyController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Champ.API/Controllers/InsuranceCompanyController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Champ.API/Controllers/PatientController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Champ.API/Controllers/PatientController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Champ.API/Migrations/ApplicationContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Champ.API/Migrations/ApplicationContextModelSnapshot.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Champ.API/Models/Department.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Champ.API/Models/Department.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Champ.API/Models/Diagnosis.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Champ.API/Models/Diagnosis.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Champ.API/Models/Doctor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Champ.API/Models/Doctor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Champ.API/Models/Drug.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Champ.API/Models/Drug.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Champ.API/Models/DrugStock.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Champ.API/Models/DrugStock.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Champ.API/Models/Dto/DrugAvailability.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Champ.API/Models/Dto/DrugAvailability.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Champ.API/Models/Hospitalization.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Champ.API/Models/Hospitalization.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Champ.API/Models/InsuranceCompany.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Champ.API/Models/InsuranceCompany.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Champ.API/Models/Measure.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Champ.API/Models/Measure.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Champ.API/Models/MeasureType.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Champ.API/Models/MeasureType.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Champ.API/Models/MedCard.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Champ.API/Models/MedCard.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Champ.API/Models/Patient.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Champ.API/Models/Patient.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Champ.API/Models/Policy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Champ.API/Models/Policy.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Champ.API/Models/Visit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Champ.API/Models/Visit.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Champ.API/Models/Warehouse.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Champ.API/Models/Warehouse.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Champ.API/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Champ.API/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Champ.API/Utils/IgnorePropertiesResolver.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Champ.API/Utils/IgnorePropertiesResolver.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Champ.API/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/Champ.API/appsettings.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Champ.Mock/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Champ.Mock/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Champ.Mock/TypeRegistrar.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Champ.Mock/TypeRegistrar.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,14 +64,44 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
-    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/24abcaf960e1496ba64f1bfa3c52f4a51e4800/05/4e4a3cbd/OkObjectResult.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/24abcaf960e1496ba64f1bfa3c52f4a51e4800/09/b7cd9f06/NotFoundObjectResult.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/24abcaf960e1496ba64f1bfa3c52f4a51e4800/43/1bdbea23/ControllerBase.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/24abcaf960e1496ba64f1bfa3c52f4a51e4800/d9/8c61b6d0/ObjectResult.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/bd1669d1392f4ba6a95238492a7b3796ae3a00/8a/3ce5b10e/ExceptionDispatchInfo.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/faa6857adc124634b6ba7eaa2f990bd829600/07/746b92a3/02000034pdb4Low.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/faa6857adc124634b6ba7eaa2f990bd829600/38/bca70fc1/02000027pdb31Low.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/faa6857adc124634b6ba7eaa2f990bd829600/5e/3b3969f9/02000032pdb2High.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/faa6857adc124634b6ba7eaa2f990bd829600/5e/3b3969f9/02000032pdb2Low.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///home/delta/RiderProjects/Champ/src/Champ.API/Controllers/InsuranceCompanyController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///home/delta/RiderProjects/Champ/src/Champ.API/Controllers/InsuranceCompanyController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///home/delta/RiderProjects/Champ/src/Champ.API/Controllers/PatientController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///home/delta/RiderProjects/Champ/src/Champ.API/Controllers/PatientController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///home/delta/RiderProjects/Champ/src/Champ.API/Controllers/PatientController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///home/delta/RiderProjects/Champ/src/Champ.API/Controllers/PatientController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///home/delta/RiderProjects/Champ/src/Champ.API/Controllers/PatientController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///home/delta/RiderProjects/Champ/src/Champ.API/Controllers/PatientController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///home/delta/RiderProjects/Champ/src/Champ.API/Controllers/PatientController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///home/delta/RiderProjects/Champ/src/Champ.API/Controllers/PatientController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///home/delta/RiderProjects/Champ/src/Champ.API/Controllers/PatientController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///home/delta/RiderProjects/Champ/src/Champ.API/Controllers/PatientController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///home/delta/RiderProjects/Champ/src/Champ.API/Controllers/PatientController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///home/delta/RiderProjects/Champ/src/Champ.API/Controllers/PatientController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///home/delta/RiderProjects/Champ/src/Champ.API/Controllers/PatientController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///home/delta/RiderProjects/Champ/src/Champ.API/Controllers/PatientController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///home/delta/RiderProjects/Champ/src/Champ.API/Controllers/PatientController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///home/delta/RiderProjects/Champ/src/Champ.API/Controllers/PatientController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///home/delta/RiderProjects/Champ/src/Champ.API/Controllers/PatientController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///home/delta/RiderProjects/Champ/src/Champ.API/Controllers/PatientController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///home/delta/RiderProjects/Champ/src/Champ.API/Controllers/PatientController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///home/delta/RiderProjects/Champ/src/Champ.API/Controllers/PatientController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///home/delta/RiderProjects/Champ/src/Champ.API/Controllers/PatientController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///home/delta/RiderProjects/Champ/src/Champ.API/Controllers/PatientController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///home/delta/RiderProjects/Champ/src/Champ.API/Controllers/PatientController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///home/delta/RiderProjects/Champ/src/Champ.API/Controllers/PatientController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///home/delta/RiderProjects/Champ/src/Champ.API/Controllers/PatientController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///home/delta/RiderProjects/Champ/src/Champ.API/Controllers/PatientController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///home/delta/RiderProjects/Champ/src/Champ.API/Controllers/PatientController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///home/delta/RiderProjects/Champ/src/Champ.API/Controllers/PatientController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///home/delta/RiderProjects/Champ/src/Champ.API/Controllers/PatientController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///home/delta/RiderProjects/Champ/src/Champ.API/Controllers/PatientController.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProblemsViewState">
@@ -103,7 +137,7 @@
     "npm.dev.executor": "Debug",
     "prettierjs.PrettierConfiguration.Package": "/home/student/RiderProjects/Champ/src/Champ.Front/node_modules/prettier",
     "settings.editor.selected.configurable": "preferences.sourceCode.C#",
-    "ts.external.directory.path": "/home/student/RiderProjects/Champ/src/Champ.Front/node_modules/typescript/lib",
+    "ts.external.directory.path": "/home/delta/RiderProjects/Champ/src/Champ.Front/node_modules/typescript/lib",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -318,13 +352,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Champ.API/Controllers/PatientController.cs</url>
-          <line>78</line>
+          <line>82</line>
           <properties documentPath="$PROJECT_DIR$/Champ.API/Controllers/PatientController.cs" initialLine="78" containingFunctionPresentation="Method 'Post'">
             <startOffsets>
-              <option value="2428" />
+              <option value="2593" />
             </startOffsets>
             <endOffsets>
-              <option value="2477" />
+              <option value="2642" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="4" />

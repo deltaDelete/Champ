@@ -13,31 +13,44 @@ namespace Champ.Mock;
 
 public static class Program {
     public static async Task<int> Main(string[] args) {
-        var conf = new Lazy<IConfiguration>(() => new ConfigurationBuilder()
-            .AddJsonFile("appsettings.json")
-            .Build());
+        var conf = new Lazy<IConfiguration>(
+            () => new ConfigurationBuilder()
+                  .AddJsonFile("appsettings.json")
+                  .Build()
+        );
 
         var services = new ServiceCollection();
         services.AddScoped<IConfiguration>(_ => conf.Value);
-        services.AddLogging(buider => buider.AddSpectreConsole(new SpectreConsoleLoggerOptions() {
-            IncludeNewLineBeforeMessage = false,
-            IncludeTimestamp = true,
-        }));
-        services.AddDbContext<ApplicationContext>((serviceProvider, options) => {
-            options.UseLoggerFactory(serviceProvider.GetService<ILoggerFactory>());
-        });
+        services.AddLogging(
+            buider => buider.AddSpectreConsole(
+                new SpectreConsoleLoggerOptions() {
+                    IncludeNewLineBeforeMessage = false,
+                    IncludeTimestamp = true,
+                }
+            )
+        );
+        services.AddDbContext<ApplicationContext>(
+            (serviceProvider, options) => { options.UseLoggerFactory(serviceProvider.GetService<ILoggerFactory>()); }
+        );
 
         var registrar = new TypeRegistrar(services);
 
         var app = new CommandApp(registrar);
 
-        app.Configure(config => {
-            config.AddCommand<GenerateCommand>("generate")
-                .WithAlias("g")
-                .WithDescription("Generate some data")
-                .WithExample("generate", "Patient")
-                .WithExample("generate", "Policy", "--amount", "10");
-        });
+        app.Configure(
+            config => {
+                config.AddCommand<GenerateCommand>("generate")
+                      .WithAlias("g")
+                      .WithDescription("Generate some data")
+                      .WithExample("generate", "Patient")
+                      .WithExample(
+                          "generate",
+                          "Policy",
+                          "--amount",
+                          "10"
+                      );
+            }
+        );
 
         return await app.RunAsync(args);
     }
@@ -77,37 +90,41 @@ class GenerateCommand : Command<GenerateCommand.Settings> {
         _logger.LogInformationMarkup("Running with parameters:", parameters);
 
         return (settings.ModelType switch {
-            ModelType.Patient => ExecutePatientAsync(context, settings),
-            ModelType.Policy => ExecutePolicyAsync(context, settings),
-            ModelType.DrugStock => ExecuteDrugStocksAsync(context, settings),
-            _ => throw new ArgumentException("")
-        }).ConfigureAwait(false).GetAwaiter().GetResult();
+                       ModelType.Patient => ExecutePatientAsync(context, settings),
+                       ModelType.Policy => ExecutePolicyAsync(context, settings),
+                       ModelType.DrugStock => ExecuteDrugStocksAsync(context, settings),
+                       _ => throw new ArgumentException("")
+                   }).ConfigureAwait(false).GetAwaiter().GetResult();
     }
 
     public async Task<int> ExecutePatientAsync(CommandContext cmdContext, Settings settings) {
         _logger.LogInformation("Starting Patient data generation");
         var customInstantiate = new Faker<Patient>("ru")
-            .CustomInstantiator(f => new Patient() {
-                GenderId = f.PickRandom(1, 2),
-                Address = f.Address.FullAddress(),
-                DateOfBirth = f.Person.DateOfBirth,
-                Email = f.Person.Email,
-                FirstName = f.Person.FirstName,
-                LastName = f.Person.LastName,
-                MiddleName = f.PickRandom(f.Person.UserName, ""),
-                Photo = GetPhoto().Result,
-                PassportNumber = f.Random.Long(0L, 9999999999L),
-                PhoneNumber = f.Person.Phone,
-            });
+            .CustomInstantiator(
+                f => new Patient() {
+                    GenderId = f.PickRandom(1, 2),
+                    Address = f.Address.FullAddress(),
+                    DateOfBirth = f.Person.DateOfBirth,
+                    Email = f.Person.Email,
+                    FirstName = f.Person.FirstName,
+                    LastName = f.Person.LastName,
+                    MiddleName = f.PickRandom(f.Person.UserName, ""),
+                    Photo = GetPhoto().Result,
+                    PassportNumber = f.Random.Long(0L, 9999999999L),
+                    PhoneNumber = f.Person.Phone,
+                }
+            );
         var patients = customInstantiate.GenerateLazy(settings.Amount).ToList();
 
         await _context.Patients.AddRangeAsync(patients);
         await _context.SaveChangesAsync();
 
-        var medCards = patients.Select(x => new MedCard() {
-            DateOfIssue = DateTimeOffset.Now,
-            PatientId = x.PatientId
-        });
+        var medCards = patients.Select(
+            x => new MedCard() {
+                DateOfIssue = DateTimeOffset.Now,
+                PatientId = x.PatientId
+            }
+        );
 
         await _context.MedCards.AddRangeAsync(medCards);
         await _context.SaveChangesAsync();
@@ -121,12 +138,14 @@ class GenerateCommand : Command<GenerateCommand.Settings> {
         _logger.LogInformation("Starting Policy data generation");
         var patients = _context.Patients.Select(p => p.PatientId).Take(100).ToList();
         var customInstantiate = new Faker<Policy>("ru")
-            .CustomInstantiator(f => new Policy() {
-                PatientId = f.PickRandom(patients),
-                ExpirationDate = DateTimeOffset.Now.AddYears(8),
-                InsuranceCompanyId =
-                    f.PickRandom(_context.InsuranceCompanies.Select(i => i.InsuranceCompanyId).ToList()),
-            });
+            .CustomInstantiator(
+                f => new Policy() {
+                    PatientId = f.PickRandom(patients),
+                    ExpirationDate = DateTimeOffset.Now.AddYears(8),
+                    InsuranceCompanyId =
+                        f.PickRandom(_context.InsuranceCompanies.Select(i => i.InsuranceCompanyId).ToList()),
+                }
+            );
         var policies = customInstantiate.GenerateLazy(settings.Amount);
 
         await _context.Policies.AddRangeAsync(policies);
@@ -135,22 +154,23 @@ class GenerateCommand : Command<GenerateCommand.Settings> {
         return 0;
     }
 
-    public async Task<int> ExecuteDrugStocksAsync(CommandContext cmdContext, Settings settings)
-    {
+    public async Task<int> ExecuteDrugStocksAsync(CommandContext cmdContext, Settings settings) {
         _logger.LogInformation("Starting DrugStocks data generation");
         var drugs = _context.Drugs.Select(p => p.DrugId).Take(100).ToList();
         var warehouses = _context.Warehouses.Select(p => p.WarehouseId).ToList();
-        
+
         var customInstantiate = new Faker<DrugStock>("ru")
-            .CustomInstantiator(f => new DrugStock() {
-                DrugId = f.PickRandom(drugs),
-                WarehouseId = f.PickRandom(warehouses),
-                Quantity = f.Random.Int(1, 100),
-                ReceiptDate = f.Date.Past(),
-                ExpirationDate = f.Date.Future()
-            });
-        
-        
+            .CustomInstantiator(
+                f => new DrugStock() {
+                    DrugId = f.PickRandom(drugs),
+                    WarehouseId = f.PickRandom(warehouses),
+                    Quantity = f.Random.Int(1, 100),
+                    ReceiptDate = f.Date.Past(),
+                    ExpirationDate = f.Date.Future()
+                }
+            );
+
+
         var drugStocks = customInstantiate.GenerateLazy(settings.Amount);
 
         await _context.DrugStocks.AddRangeAsync(drugStocks);

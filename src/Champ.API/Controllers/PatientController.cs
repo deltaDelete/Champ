@@ -18,6 +18,7 @@ public class PatientController : ControllerBase {
     }
 
     [HttpGet]
+    [ProducesResponseType(StatusCodes.Status200OK)]
     public async Task<ActionResult<IEnumerable<Patient>>> GetAll() {
         var db = await _dbFactory.CreateDbContextAsync();
         var entities = await db.Patients.ToListAsync();
@@ -25,7 +26,8 @@ public class PatientController : ControllerBase {
     }
 
     [HttpGet("{id:long}")]
-    [ProducesResponseType(typeof(NotFoundObjectResult), 404)]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
+    [ProducesResponseType(StatusCodes.Status200OK)]
     public async Task<ActionResult<Patient>> Get(long id) {
         var db = await _dbFactory.CreateDbContextAsync();
         var entity = await db.Patients.FindAsync(id);
@@ -38,6 +40,7 @@ public class PatientController : ControllerBase {
 
     [HttpDelete("{id:long}")]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
+    [ProducesResponseType(StatusCodes.Status200OK)]
     public async Task<ActionResult<Patient>> Delete(long id) {
         var db = await _dbFactory.CreateDbContextAsync();
         var entity = await db.Patients.FindAsync(id);
@@ -68,7 +71,8 @@ public class PatientController : ControllerBase {
         await db.SaveChangesAsync();
 
         _logger.LogDebug("Create Patient with {}", entity.PatientId);
-        _logger.LogDebug("Create MedCard with Id={MedCardId}, PatientId={PatientId}, Date={DateOfIssue}",
+        _logger.LogDebug(
+            "Create MedCard with Id={MedCardId}, PatientId={PatientId}, Date={DateOfIssue}",
             medCard.MedCardId,
             medCard.PatientId,
             medCard.DateOfIssue
@@ -95,7 +99,8 @@ public class PatientController : ControllerBase {
         await db.SaveChangesAsync(ct);
 
         _logger.LogDebug("Created Patient with {}", entity.PatientId);
-        _logger.LogDebug("Created MedCard with Id={MedCardId}, PatientId={PatientId}, Date={DateOfIssue}",
+        _logger.LogDebug(
+            "Created MedCard with Id={MedCardId}, PatientId={PatientId}, Date={DateOfIssue}",
             medCard.MedCardId,
             medCard.PatientId,
             medCard.DateOfIssue
@@ -108,13 +113,16 @@ public class PatientController : ControllerBase {
         }
 
         policy.PatientId = entity.PatientId;
-         _ = await db.Policies.AddAsync(register.Policy, ct);
+        _ = await db.Policies.AddAsync(register.Policy, ct);
 
         await db.SaveChangesAsync(ct);
 
         _logger.LogDebug(
             "Created Policy with PolicyId={PolicyId}, PatientId={PatientId}, InsuranceCompanyId={InsuranceCompanyId}",
-            policy.PolicyId, policy.PatientId, policy.InsuranceCompanyId);
+            policy.PolicyId,
+            policy.PatientId,
+            policy.InsuranceCompanyId
+        );
 
         return Ok(entity);
     }
@@ -137,13 +145,15 @@ public class PatientController : ControllerBase {
     }
 
     [HttpPost("{id:long}/policy")]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
+    [ProducesResponseType(StatusCodes.Status200OK)]
     public async Task<ActionResult<Policy>> PostPolicy([FromBody] Policy entity, long id, CancellationToken ct) {
         var db = await _dbFactory.CreateDbContextAsync(ct);
         var exists = await db.Patients.Include(x => x.Policies)
-            .FirstOrDefaultAsync(x => x.PatientId == id, ct);
+                             .FirstOrDefaultAsync(x => x.PatientId == id, ct);
 
         if (exists is null) {
-            return BadRequest();
+            return NotFound();
         }
 
         exists.Policies?.Add(entity);
@@ -155,7 +165,11 @@ public class PatientController : ControllerBase {
     }
 
     [HttpPost("{id:long}/photo")]
-    public async Task<IActionResult> PostPhoto([FromForm(Name =  "photo")] IFormFile file, long id, CancellationToken ct) {
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    public async Task<IActionResult>
+        PostPhoto([FromForm(Name = "photo")] IFormFile file, long id, CancellationToken ct) {
         if (file.ContentType != "image/jpeg") {
             return BadRequest("Только изображения jpg/jpeg");
         }
@@ -168,7 +182,7 @@ public class PatientController : ControllerBase {
         var exists = await db.Patients.FindAsync(new object?[] { id }, cancellationToken: ct);
 
         if (exists is null) {
-            return NotFound(id);
+            return NotFound($"Пациент с Id ${id} не найден");
         }
 
         await using var memoryStream = new MemoryStream();
@@ -188,13 +202,13 @@ public class PatientController : ControllerBase {
     }
 
     [HttpGet("{id:long}/photo")]
-    [ProducesResponseType(typeof(FileContentResult), 200)]
-    [ProducesResponseType(typeof(NotFoundObjectResult), 404)]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
+    [ProducesResponseType(StatusCodes.Status200OK)]
     public async Task<ActionResult> GetPhoto([FromRoute] long id, CancellationToken ct) {
         var db = await _dbFactory.CreateDbContextAsync(ct);
         var exists = await db.Patients.FindAsync(new object?[] { id }, cancellationToken: ct);
         if (exists is null) {
-            return NotFound(id);
+            return NotFound($"Пациент с Id ${id} не найден");
         }
 
         var cd = new ContentDisposition() {

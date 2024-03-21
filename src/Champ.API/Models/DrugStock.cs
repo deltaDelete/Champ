@@ -6,16 +6,17 @@ namespace Champ.API.Models;
 /// <summary>
 /// Партия лекарств
 /// </summary>
-public class DrugStock
-{
+public class DrugStock {
     [Key]
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public long DrugStockId { get; set; }
 
-    [ForeignKey(nameof(Drug))] public long DrugId { get; set; }
+    [ForeignKey(nameof(Drug))]
+    public long DrugId { get; set; }
 
-    [ForeignKey(nameof(Warehouse))] public long WarehouseId { get; set; }
-    
+    [ForeignKey(nameof(Warehouse))]
+    public long WarehouseId { get; set; }
+
     /// <summary>
     /// Количество товаров в партии
     /// </summary>

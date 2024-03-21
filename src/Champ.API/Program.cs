@@ -17,9 +17,10 @@ public static class Program {
 
     private static void ConfigureServices(this IServiceCollection services) {
         services.AddControllers()
-            .AddNewtonsoftJson();
+                .AddNewtonsoftJson();
         services.AddEndpointsApiExplorer();
-        services.AddSwaggerGen();
+        services.AddSwaggerGen()
+                .AddSwaggerGenNewtonsoftSupport();
         services.AddDbContextFactory<ApplicationContext>();
     }
 

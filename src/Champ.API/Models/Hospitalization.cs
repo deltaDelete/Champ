@@ -30,11 +30,12 @@ public class Hospitalization {
 
     [Column(TypeName = "TIMESTAMP")]
     public DateTimeOffset DateEnd { get; set; } = DateTimeOffset.Now;
-    
+
     [MaxLength(4096)]
     public string? AdditionalInfo { get; set; }
 
     public bool IsRejected { get; set; }
+
     [MaxLength(4096)]
     public string? RejectionReason { get; set; }
 
