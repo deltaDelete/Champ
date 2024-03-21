@@ -7,5 +7,5 @@ export interface IFormControl<TFieldValues extends FieldValues = FieldValues> {
     placeholder?: string,
     label?: string,
     ref?: React.RefCallback<any>,
-    autoComplete?: React.HTMLInputAutoCompleteAttribute
+    autoComplete?: React.HTMLInputAutoCompleteAttribute,
 }

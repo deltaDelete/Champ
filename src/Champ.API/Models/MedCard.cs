@@ -14,4 +14,7 @@ public class MedCard {
     public Patient? Patient { get; set; }
 
     public DateTimeOffset DateOfIssue { get; set; } = DateTimeOffset.Now;
+
+    [Column(TypeName = "MEDIUMBLOB")]
+    public byte[]? Photo { get; set; }
 }

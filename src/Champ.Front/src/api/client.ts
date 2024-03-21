@@ -1,4 +1,4 @@
-import { Patient } from "../models/Patient.ts";
+import { InsuranceCompany, Patient } from "../models/Patient.ts";
 
 export class Client {
     constructor() {
@@ -6,6 +6,9 @@ export class Client {
 
     getPatients() {
         return new GenericRepository<Patient>("patient");
+    }
+    getCompanies() {
+        return new GenericRepository<InsuranceCompany>("InsuranceCompany");
     }
 }
 

@@ -2,6 +2,7 @@ using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Configuration;
+using Microsoft.EntityFrameworkCore;
 
 namespace Champ.API.Models;
 
@@ -14,10 +15,8 @@ public class Measure {
     public long MedCardId { get; set; } = 0;
     public MedCard? MedCard { get; set; }
 
-    [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
-    [DefaultValue("CURRENT_TIMESTAMP")]
     [Column(TypeName = "TIMESTAMP")]
-    public DateTimeOffset MeasureDate { get; set; }
+    public DateTimeOffset MeasureDate { get; set; } = DateTimeOffset.Now;
 
     [ForeignKey(nameof(Doctor))]
     public long DoctorId { get; set; }
@@ -35,4 +34,7 @@ public class Measure {
 
     [MaxLength(4096)]
     public string Recommendations { get; set; } = string.Empty;
+
+    [Precision(10, 2)]
+    public decimal Price { get; set; } = 0;
 }

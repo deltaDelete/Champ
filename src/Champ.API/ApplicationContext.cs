@@ -3,7 +3,8 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Champ.API;
 
-public class ApplicationContext : DbContext {
+public class ApplicationContext : DbContext
+{
     private readonly ILogger<DbContext> _logger;
 
     public string ConnectionString = string.Empty;
@@ -20,13 +21,23 @@ public class ApplicationContext : DbContext {
     public DbSet<Policy> Policies { get; set; } = null!;
     public DbSet<Visit> Visits { get; set; } = null!;
 
-    public ApplicationContext(IConfiguration configuration, ILogger<DbContext> logger) {
+    #region Pharmacy
+
+    public DbSet<Drug> Drugs { get; set; } = null!;
+    public DbSet<DrugStock> DrugStocks { get; set; } = null!;
+    public DbSet<Warehouse> Warehouses { get; set; } = null!;
+
+    #endregion
+
+    public ApplicationContext(IConfiguration configuration, ILogger<DbContext> logger)
+    {
         _logger = logger;
         ConnectionString = configuration.GetSection("Database").GetValue<string>("ConnectionString") ??
                            throw new Exception("Database.ConnectionString is empty or non existent");
     }
 
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) {
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    {
         base.OnConfiguring(optionsBuilder);
         optionsBuilder.UseMySql(ConnectionString, ServerVersion.AutoDetect(ConnectionString));
         optionsBuilder.LogTo(s => _logger.LogDebug("{}", s));

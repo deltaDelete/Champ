@@ -24,16 +24,12 @@ public class Hospitalization {
     public string Purpose { get; set; } = string.Empty;
 
     public bool IsPaid { get; set; }
-    
-    [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
-    [DefaultValue("CURRENT_TIMESTAMP")]
-    [Column(TypeName = "timestamp")]
-    public DateTimeOffset DateStart { get; set; }
 
-    [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
-    [DefaultValue("CURRENT_TIMESTAMP")]
-    [Column(TypeName = "timestamp")]
-    public DateTimeOffset DateEnd { get; set; }
+    [Column(TypeName = "TIMESTAMP")]
+    public DateTimeOffset DateStart { get; set; } = DateTimeOffset.Now;
+
+    [Column(TypeName = "TIMESTAMP")]
+    public DateTimeOffset DateEnd { get; set; } = DateTimeOffset.Now;
     
     [MaxLength(4096)]
     public string? AdditionalInfo { get; set; }
@@ -41,4 +37,9 @@ public class Hospitalization {
     public bool IsRejected { get; set; }
     [MaxLength(4096)]
     public string? RejectionReason { get; set; }
+
+    [ForeignKey(nameof(Department))]
+    public long DepartmentId { get; set; }
+
+    public Department? Department { get; set; }
 }

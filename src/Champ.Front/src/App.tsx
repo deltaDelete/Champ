@@ -7,6 +7,7 @@ function App() {
         <>
             <header>
                 <h1>Шапка</h1>
+                {import.meta.env.DEV && <p>DEV</p>}
             </header>
             <main>
                 <Outlet />

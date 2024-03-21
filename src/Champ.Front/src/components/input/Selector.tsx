@@ -23,7 +23,7 @@ export function Selector<T, TFieldValues extends FieldValues = FieldValues>(prop
                        ({ field }) => (
                            <FormItem>
                                {props.label && <FormLabel>{props.label}</FormLabel>}
-                               <Select onValueChange={field.onChange} defaultValue={field.value}>
+                               <Select onValueChange={field.onChange} value={field.value}>
                                    <FormControl>
                                        {/* @ts-ignore */}
                                        <SelectTrigger>

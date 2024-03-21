@@ -16,7 +16,8 @@ public static class Program {
     }
 
     private static void ConfigureServices(this IServiceCollection services) {
-        services.AddControllers();
+        services.AddControllers()
+            .AddNewtonsoftJson();
         services.AddEndpointsApiExplorer();
         services.AddSwaggerGen();
         services.AddDbContextFactory<ApplicationContext>();

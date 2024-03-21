@@ -3,6 +3,7 @@ using System;
 using Champ.API;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Champ.API.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    partial class ApplicationContextModelSnapshot : ModelSnapshot
+    [Migration("20240315061736_PolicyPropertiesIgnore")]
+    partial class PolicyPropertiesIgnore
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -78,57 +81,6 @@ namespace Champ.API.Migrations
                     b.ToTable("Doctors");
                 });
 
-            modelBuilder.Entity("Champ.API.Models.Drug", b =>
-                {
-                    b.Property<long>("DrugId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint");
-
-                    b.Property<string>("Description")
-                        .IsRequired()
-                        .HasMaxLength(4096)
-                        .HasColumnType("varchar(4096)");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasMaxLength(255)
-                        .HasColumnType("varchar(255)");
-
-                    b.HasKey("DrugId");
-
-                    b.ToTable("Drugs");
-                });
-
-            modelBuilder.Entity("Champ.API.Models.DrugStock", b =>
-                {
-                    b.Property<long>("DrugStockId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint");
-
-                    b.Property<long>("DrugId")
-                        .HasColumnType("bigint");
-
-                    b.Property<DateTimeOffset>("ExpirationDate")
-                        .HasColumnType("datetime(6)");
-
-                    b.Property<int>("Quantity")
-                        .HasColumnType("int");
-
-                    b.Property<DateTimeOffset>("ReceiptDate")
-                        .HasColumnType("datetime(6)");
-
-                    b.Property<long>("WarehouseId")
-                        .HasColumnType("bigint");
-
-                    b.HasKey("DrugStockId");
-
-                    b.HasIndex("DrugId");
-
-                    b.HasIndex("WarehouseId");
-
-                    b.ToTable("DrugStocks");
-                });
-
             modelBuilder.Entity("Champ.API.Models.Hospitalization", b =>
                 {
                     b.Property<long>("HospitalizationId")
@@ -140,10 +92,12 @@ namespace Champ.API.Migrations
                         .HasColumnType("varchar(4096)");
 
                     b.Property<DateTimeOffset>("DateEnd")
-                        .HasColumnType("TIMESTAMP");
+                        .ValueGeneratedOnAddOrUpdate()
+                        .HasColumnType("timestamp");
 
                     b.Property<DateTimeOffset>("DateStart")
-                        .HasColumnType("TIMESTAMP");
+                        .ValueGeneratedOnAddOrUpdate()
+                        .HasColumnType("timestamp");
 
                     b.Property<long>("DepartmentId")
                         .HasColumnType("bigint");
@@ -206,6 +160,7 @@ namespace Champ.API.Migrations
                         .HasColumnType("bigint");
 
                     b.Property<DateTimeOffset>("MeasureDate")
+                        .ValueGeneratedOnAddOrUpdate()
                         .HasColumnType("TIMESTAMP");
 
                     b.Property<string>("MeasureName")
@@ -272,9 +227,6 @@ namespace Champ.API.Migrations
                     b.Property<long>("PatientId")
                         .HasColumnType("bigint");
 
-                    b.Property<byte[]>("Photo")
-                        .HasColumnType("MEDIUMBLOB");
-
                     b.HasKey("MedCardId");
 
                     b.HasIndex("PatientId");
@@ -294,7 +246,8 @@ namespace Champ.API.Migrations
                         .HasColumnType("varchar(255)");
 
                     b.Property<DateTimeOffset>("DateOfBirth")
-                        .HasColumnType("TIMESTAMP");
+                        .ValueGeneratedOnAddOrUpdate()
+                        .HasColumnType("timestamp");
 
                     b.Property<string>("Email")
                         .IsRequired()
@@ -383,56 +336,6 @@ namespace Champ.API.Migrations
                     b.HasIndex("PatientId");
 
                     b.ToTable("Visits");
-                });
-
-            modelBuilder.Entity("Champ.API.Models.Warehouse", b =>
-                {
-                    b.Property<long>("WarehouseId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasMaxLength(255)
-                        .HasColumnType("varchar(255)");
-
-                    b.HasKey("WarehouseId");
-
-                    b.ToTable("Warehouses");
-                });
-
-            modelBuilder.Entity("DrugWarehouse", b =>
-                {
-                    b.Property<long>("DrugsDrugId")
-                        .HasColumnType("bigint");
-
-                    b.Property<long>("WarehousesWarehouseId")
-                        .HasColumnType("bigint");
-
-                    b.HasKey("DrugsDrugId", "WarehousesWarehouseId");
-
-                    b.HasIndex("WarehousesWarehouseId");
-
-                    b.ToTable("DrugWarehouse");
-                });
-
-            modelBuilder.Entity("Champ.API.Models.DrugStock", b =>
-                {
-                    b.HasOne("Champ.API.Models.Drug", "Drug")
-                        .WithMany()
-                        .HasForeignKey("DrugId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Champ.API.Models.Warehouse", "Warehouse")
-                        .WithMany()
-                        .HasForeignKey("WarehouseId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Drug");
-
-                    b.Navigation("Warehouse");
                 });
 
             modelBuilder.Entity("Champ.API.Models.Hospitalization", b =>
@@ -528,21 +431,6 @@ namespace Champ.API.Migrations
                         .IsRequired();
 
                     b.Navigation("Patient");
-                });
-
-            modelBuilder.Entity("DrugWarehouse", b =>
-                {
-                    b.HasOne("Champ.API.Models.Drug", null)
-                        .WithMany()
-                        .HasForeignKey("DrugsDrugId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Champ.API.Models.Warehouse", null)
-                        .WithMany()
-                        .HasForeignKey("WarehousesWarehouseId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
                 });
 
             modelBuilder.Entity("Champ.API.Models.Patient", b =>
